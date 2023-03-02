@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@icon/ionicons": "^5.4.0-alpha.0",
-    "@ionic/react": "^6.5.6",
-    "ionicons": "^6.1.3"
-  }
-}
