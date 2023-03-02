@@ -1,0 +1,28 @@
+User data:
+    "id": number, given by OAuth? for login system
+    "name": string, input by user
+    "picture": image url, input by user
+    "goals": 
+    "age": integer, input by user
+    "time": morning, noon, night chosen from checklist
+    "split": seven fields, one for each day, give list of options: push. pull, legs, arms, cardio dropdown
+    "favorite": user chooses from dropdown, we add list of common exercises
+    "intensity": low, medium, or high
+    "contact": phone number, input by user
+    review: string, signed by user name
+
+leaderboard:
+    two options: powerlifting total, mile time
+    users can submit from leaderboard page
+    sorted by descending for lifting and ascending for mile
+    
+    users input integer for lifting or M:SS for mile, their name is submitted
+
+reviews:
+    users can write a review for a user they have matched with, it is a input string that is displlayed on profile
+
+tracking:
+    optional feature: line graph
+    for each element, we store date, exercies type (from dropown, same as favorite exercise field from profile),
+    and a number (input by user)
+
