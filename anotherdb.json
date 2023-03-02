@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "Name": "Krish",
+      "occupation": "Student",
+      "age": "21"
+    },
+    {
+      "id": 2,
+      "Name": "Aylah",
+      "occupation": "Student",
+      "age": "22"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
