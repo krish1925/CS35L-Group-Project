@@ -4,14 +4,38 @@
       "id": 1,
       "Name": "Krish",
       "occupation": "Student",
+      "Major" : "Chemical Engineering"
       "age": "21"
     },
     {
       "id": 2,
       "Name": "Aylah",
       "occupation": "Student",
+      "Major" : "Math of Computation"
       "age": "22"
+    },
+    {
+      "id": 3,
+      "Name": "Sam Hopkins",
+      "occupation": "Student",
+      "Major" : "Computer Science"
+      "age": "21"
+    },
+    {
+      "id": 4,
+      "Name": "Perla",
+      "occupation": "Student",
+      "Major" : "Math of Computation"
+      "age": "19"
+    },
+    {
+      "id": 5,
+      "Name": "Preyasi",
+      "occupation": "Student",
+      "Major" : "Math of Computation"
+      "age": "21"
     }
+
   ],
   "comments": [
     {
