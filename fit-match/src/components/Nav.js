@@ -1,15 +1,14 @@
 import colorLogo from '../images/fitmatch-logo.png'
 import whiteLogo from '../images/fitmatch-logo-white.png'
 
-function Nav({whitePage, setShowModal, showModal, setIsSignUp}) {
+function Nav({/*authToken,*/ whitePage, setShowModal, showModal, setIsSignUp}) {
 
     function handleClick() {
         setShowModal(true);
         setIsSignUp(false);
     }
 
-    const authToken = true;
-
+    const authToken = false;
     return (
     
         <nav>
@@ -17,11 +16,11 @@ function Nav({whitePage, setShowModal, showModal, setIsSignUp}) {
                 <img className="logo" src={whitePage ? colorLogo : whiteLogo}/>
             </div>
 
-            {!authToken && !whitePage && <button 
+            {!authToken && !whitePage && (<button 
                 className="nav-button"
                 onClick={handleClick}
                 disabled={showModal}
-            >Log In</button>}
+            >Log In</button>)}
         </nav>
         
     );

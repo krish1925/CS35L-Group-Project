@@ -17,7 +17,8 @@ function Home(){
 
     return (
         <div className="overlay">
-            <Nav whitePage={false} 
+            <Nav whitePage={false}
+                authToken={authToken}
                 setShowModal={setShowModal} 
                 showModal={showModal}
                 setIsSignUp={setIsSignUp}/>
