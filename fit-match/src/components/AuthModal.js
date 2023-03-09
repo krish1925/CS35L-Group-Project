@@ -64,7 +64,7 @@ function AuthModal({setShowModal, isSignUp}) {
             </form>
 
             <hr/>
-            <h2>GET THE APP</h2>
+            <h2>You don't have to do it alone. Can change this later...</h2>
         </div>
     );
 }

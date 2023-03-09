@@ -1,12 +1,14 @@
 import colorLogo from '../images/fitmatch-logo.png'
 import whiteLogo from '../images/fitmatch-logo-white.png'
 
-function Nav({whitePage, authToken, setShowModal, showModal, setIsSignUp}) {
+function Nav({whitePage, setShowModal, showModal, setIsSignUp}) {
 
     function handleClick() {
         setShowModal(true);
         setIsSignUp(false);
     }
+
+    const authToken = true;
 
     return (
     
