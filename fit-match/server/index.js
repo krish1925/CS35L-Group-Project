@@ -3,6 +3,7 @@ const express = require('express')
 const { MongoClient } = require('mongodb')
 const {v4: uuidv4} = require('uuid')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const uri = "mongodb+srv://project:project@35lproject.3p5ldxo.mongodb.net/?retryWrites=true&w=majority"
 const cors = require('cors')
 const app = express()
@@ -16,17 +17,17 @@ app.get('/', (req, res) => {
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
     console.log(req.body)
-    const { email, password} = req.body
+    const { email, password } = req.body
 
     const generatedUserId = uuidv4()
     const hashedPassword = await bcrypt.hash(password, 10)
 
     try {
-        client.connect()
+        await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
 
-        const existingUser = users.findOne({ email })
+        const existingUser = await users.findOne({ email })
 
         if (existingUser) {
             return res.status(409).send('User already exists. Please login')
