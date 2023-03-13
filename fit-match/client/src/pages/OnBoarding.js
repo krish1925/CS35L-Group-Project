@@ -212,7 +212,7 @@ function OnBoarding() {
                         />
 
                         <div className="photo-container">
-                         {formData.url &&   <img scr={formData.url} alt="profile picture preview"/>}
+                         {formData.url &&   <img src={formData.url} alt="profile picture preview"/>}
                         </div>
                     </section>
 
