@@ -53,9 +53,11 @@ function Dashboard() {
       }
     }
   
+    console.log(user)
     const swiped = (direction, swipedUserId) => {
       if (direction === 'right') {
-        updatedMatches(swipedUserId.user_id)
+        console.log(swipedUserId)
+        updatedMatches(swipedUserId)
       }
       setLastDirection(direction);
     }
@@ -72,15 +74,15 @@ function Dashboard() {
             <div className="swipe-container">
                 <div className="card-container">
                     
-                    {genderedUsers?.map((character) =>
+                    {genderedUsers?.map((genderedUser) =>
                         <TinderCard 
                             className='swipe' 
-                            key={character.first_name} 
-                            onSwipe={(dir) => swiped(dir, character.user_id)} 
-                            onCardLeftScreen={() => outOfFrame(character.first_name)}>
-                            <div style={{ backgroundImage: 'url(' + character.url + ')' }} 
+                            key={genderedUser.first_name} 
+                            onSwipe={(dir) => swiped(dir, genderedUser.user_id)} 
+                            onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}>
+                            <div style={{ backgroundImage: 'url(' + genderedUser.url + ')' }} 
                                 className='card'>
-                                <h3>{character.first_name}</h3>
+                                <h3>{genderedUser.first_name}</h3>
                             </div>
                         </TinderCard>
                     )}

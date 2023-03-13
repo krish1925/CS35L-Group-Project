@@ -178,7 +178,7 @@ app.put('/addmatch', async(req, res) => {
 
     try {
         await client.connect()
-        const databse = client.db('app-data')
+        const database = client.db('app-data')
         const users = database.collection('users')
 
         const query = {user_id:userId}
