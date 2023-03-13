@@ -27,9 +27,9 @@ function AuthModal({ setShowModal, isSignUp }) {
         `http://localhost:8000/${isSignUp ? 'signup' : 'login'}`,
         { email, password }
       );
-      setCookie('Email', response.data.email, { path: '/' });
-      setCookie('userId', response.data.userId, { path: '/' });
+
       setCookie('AuthToken', response.data.token, { path: '/' });
+      setCookie('UserId', response.data.userId)
 
       const success = response.status === 201;
 

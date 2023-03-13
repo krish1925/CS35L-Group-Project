@@ -9,7 +9,7 @@ import axios from 'axios'
 function OnBoarding() {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
-        user_id: cookies.UserId,
+        user_id: cookies.Userid,
         first_name: '',
         last_name: '',
         dob_day: '',
@@ -18,7 +18,6 @@ function OnBoarding() {
         show_gender: '',
         gender_identity: '',
         gender_interest: '',
-        email: '',
         url: '',
         about: '',
         matches: []
