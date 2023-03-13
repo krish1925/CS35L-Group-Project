@@ -1,9 +1,11 @@
+import { navigate } from '@reach/router'
 import {useCookies} from 'react-cookie'
 const ChatHeader = ({user}) => {
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const logout = () => {
         removeCookie('UserId', cookies.UserId)
         removeCookie('AuthToken', cookies.AuthToken)
+        navigate ('/')
         window.location.reload()
     }
 
