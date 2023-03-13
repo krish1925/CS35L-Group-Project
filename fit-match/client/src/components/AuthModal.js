@@ -29,7 +29,7 @@ function AuthModal({ setShowModal, isSignUp }) {
       );
 
       setCookie('AuthToken', response.data.token, { path: '/' });
-      setCookie('UserId', response.data.userId)
+      setCookie('UserId', response.data.userId, { path: '/' })
 
       const success = response.status === 201;
 
