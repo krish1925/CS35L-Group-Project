@@ -10,6 +10,7 @@ function Dashboard() {
   const [genderedUsers, setGenderedUsers] = useState(null)
 
     const userId = cookies.UserId
+
     const getUser = async () => {
       try {
         const response = await axios.get('http://localhost:8000/user', {
@@ -23,7 +24,7 @@ function Dashboard() {
     //modify for selection by workout pref
     const getGenderedUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/gendered-user', {
+        const response = await axios.get('http://localhost:8000/gendered-users', {
           params: {gender: user?.gender_interest}
         })
         setGenderedUsers(response.data)
