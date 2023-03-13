@@ -1,10 +1,15 @@
 //big sign up form
+import { navigate } from '@reach/router';
 import {useState} from 'react'
+import { useCookies } from 'react-cookie'
 import Nav from '../components/Nav'
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 function OnBoarding() {
+    const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState ({
-        user_id: '',
+        user_id: cookies.UserId,
         first_name: '',
         last_name: '',
         dob_day: '',
@@ -19,9 +24,19 @@ function OnBoarding() {
         matches: []
     })
 
+    let navigate = useNavigate()
 
-    function handleSubmit() {
+
+    const handleSubmit = async(e) => {
         console.log('submitted');
+        e.preventDefault()
+        try {
+            const response = await axios.put('http://localhost:8000/user', {formData})
+            const success = response.status === 200
+            if (success) navigate('/dashboard')
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     function handleChange(e) {
@@ -198,7 +213,7 @@ function OnBoarding() {
                         />
 
                         <div className="photo-container">
-                            <img scr={formData.url} alt="profile picture preview"/>
+                         {formData.url &&   <img scr={formData.url} alt="profile picture preview"/>}
                         </div>
                     </section>
 
