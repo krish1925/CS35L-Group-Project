@@ -1,6 +1,6 @@
 import Nav from '../components/Nav' 
 import AuthModal from '../components/AuthModal'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Leaderboard(){
 
@@ -22,9 +22,50 @@ function Leaderboard(){
                 setShowModal={setShowModal} 
                 showModal={showModal}
                 setIsSignUp={setIsSignUp}/>
-            <div className="home">
+            <div className="leaderboard_home">
                 <h1 className="primary-title">Leaderboard</h1>
-                <button className="primary-button" onClick={handleClick}>
+
+                <div className="leaderboard_table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Adam</td>
+                            <td>810</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Bob</td>
+                            <td>630</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Charlene</td>
+                            <td>550</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Desmond</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Evelyn</td>
+                            <td>300</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+
+                <button className="primary-button" onClick={handleClick} style={{ marginTop: '30px' }}>
                     {'Submit Total'}
                 </button>
 
