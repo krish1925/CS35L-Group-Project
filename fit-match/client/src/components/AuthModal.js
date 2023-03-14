@@ -45,7 +45,7 @@ function AuthModal({ setShowModal, isSignUp }) {
   return (
     <div className='auth-modal'>
       <div className='close-icon' onClick={handleClick}>
-        Ⓧ
+      ✖
       </div>
       <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
 

@@ -1,13 +1,24 @@
 .overlay {
-    background: white  ;
-
-}
-
-.overlay home {
-    display: flex;
-    flex-direction: column;
+    background: white; /* centers the child vertically */
+    height: 100vh; 
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.overlay home{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    justify-content: center; /* centers the child horizontally */
+    /* position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
   }
   
 .overlay h2{
@@ -24,14 +35,6 @@
 
 }
 
-.overlay h2{
-    padding-top: 0px;
-    align-items: top;
-    color: #ff4057;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* text-shadow: 2px 2px 5px black; */
-
-}
 
 .overlay button{
     background-color: #ff4057;
@@ -40,12 +43,9 @@
     font-weight: bold;
     border-radius: 30px;
 }
-  
-.overlay primary-button {
-    background-color: #36444d;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
+
+.overlay button:hover{
+    background: #36444d;
   }
+  
+  

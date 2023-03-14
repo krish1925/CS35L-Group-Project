@@ -25,24 +25,22 @@ html, body {
 }
 
 .primary-button:hover {
-  background: linear-gradient(260deg, #7d944a,#a7c464);
+  background: #36444d;
 }
 
 .secondary-button {
-  color: rgb(121, 119, 119);
-  background-color: #fff;
+  color: #FFFF;
+  background-color: #FF4057;
   font-weight: 500;
-  font-size: 15px;
-  text-transform: uppercase;
+  font-size: 20px;
   padding: 12px 30px;
   border-radius: 30px;
-  border: solid 2px rgb(155, 153, 153);
+  border: none;
   margin: 6px;
 }
 
 .secondary-button:hover{
-  color: rgb(48, 48, 48);
-  border: solid 2px rgb(48, 48, 48);
+  background: #36444d;
 }
 
 /*------- Navigation Bar -------*/
@@ -54,7 +52,7 @@ nav{
 }
 
 nav .nav-button {
-  color: #7d944a;
+  color: #FF4057;
   background-color: #fff;
   font-size: 20px;
   padding: 10px 20px;
@@ -65,8 +63,8 @@ nav .nav-button {
 }
 
 nav .nav-button:disabled {
-  background-color: #5d6e38;
-  color:#7d944a;
+  background-color: #880f1d;
+  color:rgb(162, 156, 156);
 }
 
 nav .logo-container {
@@ -84,11 +82,10 @@ nav .logo-container .logo{
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .home{
-  margin-top: 30vh;
+  margin-top: 20vh;
 }
 
 /*------- Auth Modal -------*/
@@ -115,16 +112,18 @@ nav .logo-container .logo{
   flex-direction: column;
 }
 
+.auth-modal h2 {
+  color: #36444d;
+}
+
 .auth-modal input[type=password],
 .auth-modal input[type=email]
 {
   padding: 8px;
   margin: 8px;
   font-size: 17px;
+  color: #36444d;
 }
-
-
-
 
 /*------- OnBoarding Page -------*/
 
