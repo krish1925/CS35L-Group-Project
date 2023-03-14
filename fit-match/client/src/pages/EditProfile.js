@@ -90,7 +90,7 @@ function EditProfile() {
                                 id="male-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="male"
+                                value="Male"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Male'}
                             />
@@ -99,7 +99,7 @@ function EditProfile() {
                                 id="female-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="female"
+                                value="Female"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Female'}
                             />
@@ -108,7 +108,7 @@ function EditProfile() {
                                 id="other-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="other"
+                                value="Other"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Other'}
                             />
@@ -132,7 +132,7 @@ function EditProfile() {
                                 id="male-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="male"
+                                value="Male"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Male'}
                             />
@@ -141,7 +141,7 @@ function EditProfile() {
                                 id="female-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="female"
+                                value="Female"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Female'}
                             />
@@ -150,7 +150,7 @@ function EditProfile() {
                                 id="everyone-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="everyone"
+                                value="Everyone"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Everyone'}
                             />
@@ -187,7 +187,7 @@ function EditProfile() {
                                 id="morning-workout-time"
                                 type="radio"
                                 name="workout_time"
-                                value="morning"
+                                value="Morning"
                                 onChange={handleChange}
                                 checked={formData.workout_time === 'Morning'}
                             />
@@ -196,7 +196,7 @@ function EditProfile() {
                                 id="midday-workout-time"
                                 type="radio"
                                 name="workout_time"
-                                value="midday"
+                                value="Midday"
                                 onChange={handleChange}
                                 checked={formData.workout_time === 'Midday'}
                             />
@@ -205,7 +205,7 @@ function EditProfile() {
                                 id="night-workout-time"
                                 type="radio"
                                 name="workout_time"
-                                value="night"
+                                value="Night"
                                 onChange={handleChange}
                                 checked={formData.workout_time === 'Night'}
                             />
@@ -219,7 +219,7 @@ function EditProfile() {
                                 id="light-workout-intensity"
                                 type="radio"
                                 name="workout_intensity"
-                                value="light"
+                                value="Light"
                                 onChange={handleChange}
                                 checked={formData.workout_intensity === 'Light'}
                             />
@@ -228,7 +228,7 @@ function EditProfile() {
                                 id="medium-workout-intensity"
                                 type="radio"
                                 name="workout_intensity"
-                                value="medium"
+                                value="Medium"
                                 onChange={handleChange}
                                 checked={formData.workout_intensity === 'Medium'}
                             />
@@ -237,7 +237,7 @@ function EditProfile() {
                                 id="intense-workout-intensity"
                                 type="radio"
                                 name="workout_intensity"
-                                value="intense"
+                                value="Intense"
                                 onChange={handleChange}
                                 checked={formData.workout_intensity === 'Intense'}
                             />

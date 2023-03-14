@@ -121,7 +121,7 @@ function OnBoarding() {
                                 id="male-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="male"
+                                value="Male"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Male'}
                             />
@@ -130,7 +130,7 @@ function OnBoarding() {
                                 id="female-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="female"
+                                value="Female"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Female'}
                             />
@@ -139,7 +139,7 @@ function OnBoarding() {
                                 id="other-gender-identity"
                                 type="radio"
                                 name="gender_identity"
-                                value="other"
+                                value="Other"
                                 onChange={handleChange}
                                 checked={formData.gender_identity === 'Other'}
                             />
@@ -163,7 +163,7 @@ function OnBoarding() {
                                 id="male-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="male"
+                                value="Male"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Male'}
                             />
@@ -172,7 +172,7 @@ function OnBoarding() {
                                 id="female-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="female"
+                                value="Female"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Female'}
                             />
@@ -181,7 +181,7 @@ function OnBoarding() {
                                 id="everyone-gender-interest"
                                 type="radio"
                                 name="gender_interest"
-                                value="everyone"
+                                value="Everyone"
                                 onChange={handleChange}
                                 checked={formData.gender_interest === 'Everyone'}
                             />
