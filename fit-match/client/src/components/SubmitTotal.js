@@ -12,6 +12,7 @@ function SubmitTotal({ setShowModal, isSignUp }) {
 
   function handleClick() {
     setShowModal(false);
+    window.location.reload()
   }
 
   const handleSubmit = async (e) => {
@@ -26,6 +27,7 @@ function SubmitTotal({ setShowModal, isSignUp }) {
       );
       const success = response.status === 201
       setShowModal(false)
+      window.location.reload()
   
     } catch (error) {
       console.log(error);

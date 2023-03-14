@@ -62,7 +62,7 @@ app.post('/submitTotal', async (req, res) => {
         const {email, total} = req.body
         const user = await users.findOne({email})
         if (user) {
-            const result = await users.updateOne({email}, {$set: {total}})
+            const result = await users.updateOne({email}, {$set: {total: parseInt(total)}});
             res.send(result)
         } else {
             res.status(404).send('User not found')
