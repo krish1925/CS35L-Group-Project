@@ -284,6 +284,63 @@ app.put('/workout', async (req, res) => {
     }
 })
 
+app.put('/editProfile', async (req, res) => {
+    const client = new MongoClient(uri)
+    const formData = req.body.formData
+  
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('users')
+
+        const query = {user_id: formData.user_id} 
+        console.log(query)
+
+        const updateDocument = {}
+        if (formData.workout_time !== undefined) {
+            updateDocument.workout_time = formData.workout_time
+        }
+        if (formData.workout_intensity !== undefined) {
+            updateDocument.workout_intensity = formData.workout_intensity
+        }
+        if (formData.favorite_exercise !== undefined) {
+            updateDocument.favorite_exercise = formData.favorite_exercise
+        }
+        if (formData.goals !== undefined) {
+            updateDocument.goals = formData.goals
+        }
+        if (formData.first_name !== undefined) {
+            updateDocument.first_name = formData.first_name
+        }
+        if (formData.last_name !== undefined) {
+            updateDocument.last_name = formData.last_name
+        }
+        if (formData.show_gender !== undefined) {
+            updateDocument.show_gender = formData.show_gender
+        }
+        if (formData.gender_identity !== undefined) {
+            updateDocument.gender_identity = formData.gender_identity
+        }
+        if (formData.gender_interest !== undefined) {
+            updateDocument.gender_interest = formData.gender_interest
+        }
+        if (formData.url !== undefined) {
+            updateDocument.url = formData.url
+        }
+        if (formData.about !== undefined) {
+            updateDocument.about = formData.about
+        }
+
+        const updatedUser = await users.updateOne(query, { $set: updateDocument })
+
+        res.json(updatedUser)
+
+    } finally {
+        await client.close()
+    }
+})
+
+
 
 app.put('/addmatch', async(req, res) => {
     const client = new MongoClient(uri)

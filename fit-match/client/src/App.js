@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard.js'
 import OnBoarding from './pages/OnBoarding'
 import Leaderboard from './pages/Leaderboard'
 import WorkoutInfo from './pages/WorkoutInfo'
+import EditProfile from './pages/EditProfile'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {useCookies} from 'react-cookie'
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         <Route path="/workoutInfo" element={<WorkoutInfo/>}/>
+        <Route path="/editProfile" element={<EditProfile/>}/>
         {authToken && <Route path="/dashboard" element={<Dashboard/>}/>}
         {authToken && <Route path="/onboarding" element={<OnBoarding/>}/>}
         {authToken && <Route path="/viewprofile" element={<ViewProfile/>}/>}

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
+
 
 const ViewProfile= ({user})=> {
     const [isEditing, setIsEditing] = useState(false);
@@ -11,7 +13,10 @@ const ViewProfile= ({user})=> {
         setIsEditing(false);
       };
 
-
+      function handleClick() {
+        navigate('/editProfile')
+    }
+    const navigate = useNavigate();
 
   if (!user) {
     return <div>Loading...</div>;
@@ -28,7 +33,7 @@ const ViewProfile= ({user})=> {
       <p>Preferred Workout Time: {user.workout_time}</p>
       <p>Preferred Workout Intensity: {user.workout_intensity}</p>
       
-      <button className="secondary-button">Edit</button> 
+      <button className="secondary-button" onClick={handleClick}>Edit</button> 
     </div>
   );
 }
