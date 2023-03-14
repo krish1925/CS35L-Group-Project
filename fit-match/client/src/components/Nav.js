@@ -1,5 +1,4 @@
-import colorLogo from '../images/fitmatch-logo.png'
-import whiteLogo from '../images/fitmatch-logo-white.png'
+import colorLogo from '../images/fitmatch.png'
 
 function Nav({/*authToken,*/ whitePage, setShowModal, showModal, setIsSignUp}) {
 
@@ -13,7 +12,7 @@ function Nav({/*authToken,*/ whitePage, setShowModal, showModal, setIsSignUp}) {
     
         <nav>
             <div className="logo-container">
-                <img className="logo" src={whitePage ? colorLogo : whiteLogo}/>
+                <img className="logo" src={whitePage ? colorLogo : colorLogo}/>
             </div>
 
             {!authToken && !whitePage && (<button 

@@ -1,0 +1,51 @@
+.overlay {
+    background: white  ;
+
+}
+
+.overlay home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.overlay h2{
+    margin-top: 0.5em;
+  }
+
+.overlay h1{
+    color: #36444d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 0px;
+    align-content: center;
+    margin-bottom: 0;
+    /* text-shadow: 2px 2px 5px black; */
+
+}
+
+.overlay h2{
+    padding-top: 0px;
+    align-items: top;
+    color: #ff4057;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* text-shadow: 2px 2px 5px black; */
+
+}
+
+.overlay button{
+    background-color: #ff4057;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+}
+  
+.overlay primary-button {
+    background-color: #36444d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }

@@ -81,7 +81,7 @@ function AuthModal({ setShowModal, isSignUp }) {
       </form>
 
       <hr />
-      <h2>You don't have to do it alone. Can change this later...</h2>
+      <h2>Match, Meet, Motivate</h2>
     </div>
   );
 }

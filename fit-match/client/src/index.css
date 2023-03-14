@@ -17,9 +17,8 @@ html, body {
 
 .primary-button {
   color: #fff;
-  text-transform: uppercase;
-  font-size: 15px;
-  background: linear-gradient(45deg, #7d944a,#a7c464);
+  font-size: 20px;
+  background: #FF4057;
   padding: 12px 30px;
   border-radius: 30px;
   border: none;

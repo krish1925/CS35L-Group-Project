@@ -1,6 +1,7 @@
 import Nav from '../components/Nav' 
 import AuthModal from '../components/AuthModal'
 import {useState} from 'react'
+import './Home.css';
 
 function Home(){
 
@@ -24,6 +25,7 @@ function Home(){
                 setIsSignUp={setIsSignUp}/>
             <div className="home">
                 <h1 className="primary-title">FitMatch</h1>
+                <h2 className="tagline"> Match, Meet, Motivate </h2>
                 <button className="primary-button" onClick={handleClick}>
                     {authToken ? 'Signout' : 'Create Account'}
                 </button>
