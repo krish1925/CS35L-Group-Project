@@ -4,12 +4,15 @@ import {useCookies} from 'react-cookie'
 import ChatContainer from '../components/ChatContainer'
 import axios from 'axios'
 import ViewProfile from './Viewprofile'
+import Leaderboard from './Leaderboard'
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const [user, setUser] = useState(null)
   const[cookies, setCookie, removeCookie] = useCookies(['user'])
   const [genderedUsers, setGenderedUsers] = useState(null)
   const [showProfile, setShowProfile] = useState(false);
+  const navigate = useNavigate();
 
     const userId = cookies.UserId
 
@@ -72,11 +75,8 @@ function Dashboard() {
     const filteredGenderedUsers = genderedUsers?.filter(
       genderedUser => !matchedUserIds.includes(genderedUser.user_id)
     )
-    const handleProfileButtonClick = () => {
-      setShowProfile(true);
-    };
-    const handleBackButtonClick = () => {
-      setShowProfile(false);
+    const goLeaderboard = () => {
+      navigate('/leaderboard');
     };
 
   const toggleProfile = () => {
@@ -90,7 +90,10 @@ function Dashboard() {
             <ChatContainer user={user} />
             <div className="swipe-container">
               <div className="card-container">
-              <button className="secondary-button" onClick={toggleProfile}>{showProfile ? 'View Matches' : 'View/Edit Profile'}</button>
+              <div className="button-container">
+  <button className="secondary-button" onClick={goLeaderboard}>Leaderboard</button>
+  <button className="secondary-button" onClick={toggleProfile}>{showProfile ? 'View Matches' : 'View/Edit Profile'}</button>
+</div>
                 {showProfile ? (
                   <ViewProfile user= {user} toggleProfile={toggleProfile} />
                 ) : (

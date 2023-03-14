@@ -439,3 +439,13 @@ td:nth-child(3) {
   font-size: 18px;
   text-align: center;
 }
+
+.button-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.secondary-button {
+  display: inline-block;
+  margin-right: 10px;
+}
