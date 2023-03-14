@@ -123,7 +123,7 @@ function OnBoarding() {
                                 name="gender_identity"
                                 value="male"
                                 onChange={handleChange}
-                                checked={formData.gender_identity === 'male'}
+                                checked={formData.gender_identity === 'Male'}
                             />
                             <label htmlFor="male-gender-identity">Male</label>
                             <input 
@@ -132,7 +132,7 @@ function OnBoarding() {
                                 name="gender_identity"
                                 value="female"
                                 onChange={handleChange}
-                                checked={formData.gender_identity === 'female'}
+                                checked={formData.gender_identity === 'Female'}
                             />
                             <label htmlFor="female-gender-identity">Female</label>
                             <input 
@@ -141,7 +141,7 @@ function OnBoarding() {
                                 name="gender_identity"
                                 value="other"
                                 onChange={handleChange}
-                                checked={formData.gender_identity === 'other'}
+                                checked={formData.gender_identity === 'Other'}
                             />
                             <label htmlFor="other-gender-identity">Other</label>
                         </div>
@@ -165,7 +165,7 @@ function OnBoarding() {
                                 name="gender_interest"
                                 value="male"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === 'male'}
+                                checked={formData.gender_interest === 'Male'}
                             />
                             <label htmlFor="male-gender-interest">Male</label>
                             <input 
@@ -174,7 +174,7 @@ function OnBoarding() {
                                 name="gender_interest"
                                 value="female"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === 'female'}
+                                checked={formData.gender_interest === 'Female'}
                             />
                             <label htmlFor="female-gender-interest">Female</label>
                             <input 
@@ -183,7 +183,7 @@ function OnBoarding() {
                                 name="gender_interest"
                                 value="everyone"
                                 onChange={handleChange}
-                                checked={formData.gender_interest === 'everyone'}
+                                checked={formData.gender_interest === 'Everyone'}
                             />
                             <label htmlFor="everyone-gender-interest">Everyone</label>
                         </div>

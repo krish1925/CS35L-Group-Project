@@ -26,7 +26,7 @@ const ViewProfile= ({user})=> {
     <div className="ViewProfile">
       <h2>{user.first_name}</h2>
       <img src={user.url} alt={"photo"} style={{maxWidth: "300px", maxHeight: "300px"}}/>
-      <p>Gender: {user.show_gender ? user.gender_identity : 'Not specified'}</p>
+      <p>Gender: {user.gender_identity}</p>
       <p>About me: {user.about}</p>
       <p>Goals: {user.goals}</p>
       <p>Favorite Exercise: {user.favorite_exercise}</p>
