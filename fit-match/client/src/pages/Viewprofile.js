@@ -19,12 +19,14 @@ const ViewProfile= ({user})=> {
 
   return (
     <div className="ViewProfile">
-      <h2>First Name: {user.first_name}</h2>
-      <h2>Last Name: {user.last_name}</h2>
-      <img src={user.url} alt={"photo"}/>
-      <p>Birthday: {user.dob_month}/{user.dob_day}/{user.dob_year}</p>
+      <h2>{user.first_name}</h2>
+      <img src={user.url} alt={"photo"} style={{maxWidth: "300px", maxHeight: "300px"}}/>
       <p>Gender: {user.show_gender ? user.gender_identity : 'Not specified'}</p>
       <p>About me: {user.about}</p>
+      <p>Goals: {user.goals}</p>
+      <p>Favorite Exercise: {user.favorite_exercise}</p>
+      <p>Preferred Workout Time: {user.workout_time}</p>
+      <p>Preferred Workout Intensity: {user.workout_intensity}</p>
       
       <button className="secondary-button">Edit</button> 
     </div>
