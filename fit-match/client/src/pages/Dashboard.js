@@ -90,7 +90,7 @@ function Dashboard() {
             <ChatContainer user={user} />
             <div className="swipe-container">
               <div className="card-container">
-              <button className="secondary-button" onClick={toggleProfile}>{showProfile ? 'View Matches' : 'View Profile'}</button>
+              <button className="secondary-button" onClick={toggleProfile}>{showProfile ? 'View Matches' : 'View/Edit Profile'}</button>
                 {showProfile ? (
                   <ViewProfile user= {user} toggleProfile={toggleProfile} />
                 ) : (
