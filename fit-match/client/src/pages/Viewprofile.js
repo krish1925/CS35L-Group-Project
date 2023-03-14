@@ -26,7 +26,7 @@ const ViewProfile= ({user})=> {
       <p>Gender: {user.show_gender ? user.gender_identity : 'Not specified'}</p>
       <p>About me: {user.about}</p>
       
-      <button>Edit</button> 
+      <button className="secondary-button">Edit</button> 
     </div>
   );
 }
