@@ -1,5 +1,6 @@
 import './index.css'
 import Home from './pages/Home.js'
+import ViewProfile from './pages/Viewprofile' 
 import Dashboard from './pages/Dashboard.js'
 import OnBoarding from './pages/OnBoarding'
 import Leaderboard from './pages/Leaderboard'
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         {authToken && <Route path="/dashboard" element={<Dashboard/>}/>}
         {authToken && <Route path="/onboarding" element={<OnBoarding/>}/>}
+        {authToken && <Route path="/viewprofile" element={<ViewProfile/>}/>}
       </Routes>
     </BrowserRouter>
   );
