@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import Chat from './Chat'
 import ChatInput from './ChatInput'
-=======
-
-import Chat from "./Chat";
-import ChatInput from "./ChatInput";
->>>>>>> 5e505efd010a76c197db5bf88d4d13918f71ca61
 import axios from 'axios'
 import {useState, useEffect} from "react"
 
