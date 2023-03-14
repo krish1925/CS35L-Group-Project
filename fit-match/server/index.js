@@ -255,6 +255,35 @@ app.put('/user', async (req, res) => {
     }
 })
 
+app.put('/workout', async (req, res) => {
+    const client = new MongoClient(uri)
+    const formData = req.body
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('users')
+
+        const query = {user_id: formData.user_id} 
+        console.log(query)
+
+        const updateDocument = {
+            $set: {
+                workout_time: formData.workout_time,
+                workout_intensity: formData.workout_intensity,
+                favorite_exercise: formData.favorite_exercise,
+                goals: formData.goals, 
+            },
+        }
+
+        const insertedUser = await users.updateOne(query, updateDocument)
+
+        res.json(insertedUser)
+
+    } finally {
+        await client.close()
+    }
+})
+
 
 app.put('/addmatch', async(req, res) => {
     const client = new MongoClient(uri)
