@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
-    console.log(req.body)
     const { email, password } = req.body
 
     const generatedUserId = uuidv4()
@@ -52,6 +51,31 @@ app.post('/signup', async (req, res) => {
 })
 
 
+app.post('/submitTotal', async (req, res) => {
+    const client = new MongoClient(uri)
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const leaderboard = database.collection('leaderboard')
+        const users = database.collection('users')
+        
+        const {email, total} = req.body
+        const user = await users.findOne({email})
+        if (user) {
+            const result = await users.updateOne({email}, {$set: {total}})
+            res.send(result)
+        } else {
+            res.status(404).send('User not found')
+        }
+    } catch (err) {
+        console.log(err)
+    } finally {
+        await client.close()
+    }
+})
+
+
+
 app.post('/login', async (req, res) => {
     const client = new MongoClient(uri)
     const {email, password} = req.body
@@ -80,6 +104,8 @@ app.post('/login', async (req, res) => {
         await client.close()
     }
 })
+
+
 
 //get user
 app.get('/user', async(req, res) => {
@@ -125,6 +151,36 @@ app.get('/users', async (req, res) => {
         await client.close()
     }
 })
+
+app.get('/leaderboard', async (req, res) => {
+    const client = new MongoClient(uri);
+  
+    try {
+      await client.connect();
+      const database = client.db('app-data');
+      const users = database.collection('users');
+  
+      // Find the top 5 users with the highest total scores
+      const topUsers = await users.find().sort({total: -1}).limit(5).toArray();
+  
+      // Create an array of user objects with name, total, and url properties
+      const leaderboard = topUsers.map(user => ({
+        name: `${user.first_name || ''} ${user.last_name || ''}`,
+        total: user.total,
+        url: user.url
+      }));
+  
+      // Send the leaderboard as a JSON array in the response
+      res.json(leaderboard);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      // Close the client connection
+      client.close();
+    }
+  });
+  
+
 
 app.get('/gendered-users', async (req, res) => {
     const client = new MongoClient(uri)

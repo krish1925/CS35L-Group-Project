@@ -1,11 +1,13 @@
-import Nav from '../components/Nav' 
+import Nav from '../components/Nav'
 import SubmitTotal from '../components/SubmitTotal'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-function Leaderboard(){
+function Leaderboard() {
 
-    const[showModal, setShowModal] = useState(false);
-    const[isSignUp, setIsSignUp] = useState(true);
+    const [leaderboard, setLeaderboard] = useState([])
+    const [showModal, setShowModal] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
 
     const authToken = false;
 
@@ -15,54 +17,83 @@ function Leaderboard(){
         setIsSignUp(true);
     }
 
+    useEffect(() => {
+        axios.get('http://localhost:8000/leaderboard')
+            .then(response => {
+                setLeaderboard((response.data));
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []);
+
+
     return (
+
         <div className="overlay">
             <Nav whitePage={false}
                 authToken={authToken}
-                setShowModal={setShowModal} 
+                setShowModal={setShowModal}
                 showModal={showModal}
-                setIsSignUp={setIsSignUp}/>
+                setIsSignUp={setIsSignUp} />
             <div className="leaderboard_home">
                 <h1 className="primary-title">Leaderboard</h1>
 
                 <div className="leaderboard_table">
                     <table>
                         <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Name</th>
-                            <th>Score</th>
-                        </tr>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Powerlifting Total</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Adam</td>
-                            <td>810</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Bob</td>
-                            <td>630</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Charlene</td>
-                            <td>550</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Desmond</td>
-                            <td>500</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Evelyn</td>
-                            <td>300</td>
-                        </tr>
+                            <tr>
+                                <td>1</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                    <img src={leaderboard[0]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
+                                    <div>{leaderboard[0]?.name}</div>
+                                </td>
+                                <td>{leaderboard[0]?.total}</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                    <img src={leaderboard[1]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
+                                    <div>{leaderboard[1]?.name}</div>
+                                </td>
+                                <td>{leaderboard[1]?.total}</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                    <img src={leaderboard[2]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
+                                    <div>{leaderboard[2]?.name}</div>
+                                </td>
+                                <td>{leaderboard[2]?.total}</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                    <img src={leaderboard[3]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
+                                    <div>{leaderboard[3]?.name}</div>
+                                </td>
+                                <td>{leaderboard[3]?.total}</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                    <img src={leaderboard[4]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
+                                    <div>{leaderboard[4]?.name}</div>
+                                </td>
+                                <td>{leaderboard[4]?.total}</td>
+                            </tr>
                         </tbody>
+
+
                     </table>
-                    </div>
+                </div>
 
 
                 <button className="primary-button" onClick={handleClick} style={{ marginTop: '30px' }}>
@@ -70,14 +101,13 @@ function Leaderboard(){
                 </button>
 
                 {showModal && (
-                    <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp}/>
+                    <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp} />
                 )}
 
             </div>
         </div>
-        
+
     );
 }
 
 export default Leaderboard;
- 

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function SubmitTotal({ setShowModal, isSignUp }) {
   const [total, setTotal] = useState(null)
+  const [email, setEmail] = useState(null);
   const [error, setError] = useState(null);
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
   const navigate = useNavigate(); // define navigate using useNavigate hook
@@ -21,9 +22,10 @@ function SubmitTotal({ setShowModal, isSignUp }) {
         
       const response = await axios.post(
         `http://localhost:8000/submitTotal`,
-        { total } 
+        { total, email } 
       );
-      const success = response.status === 201;
+      const success = response.status === 201
+      setShowModal(false)
   
     } catch (error) {
       console.log(error);
@@ -46,6 +48,14 @@ function SubmitTotal({ setShowModal, isSignUp }) {
           placeholder='total'
           required={true}
           onChange={(e) => setTotal(e.target.value)}
+        />
+        <input
+          type='email'
+          id='total'
+          name='total'
+          placeholder='email'
+          required={true}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         
