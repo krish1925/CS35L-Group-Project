@@ -1,6 +1,7 @@
 import { match } from "@reach/router/lib/utils";
 import axios from 'axios'
 import {useState, useEffect} from 'react'
+import {useCookies} from 'react-cookie'
 
 function MatchesDisplay({matches, setClickedUser}) {
     const [matchedProfiles, setMatchedProfiles] = useState(null)
@@ -20,9 +21,9 @@ function MatchesDisplay({matches, setClickedUser}) {
 
     useEffect(() => {
         getMatches()
-    }, [])
+    }, [matches])
 
-    console.log(matchedProfiles)
+    console.log("matchedprofs " + matchedProfiles)
 
     return (
         <div className="matches-display">
