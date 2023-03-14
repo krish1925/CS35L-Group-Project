@@ -1,5 +1,5 @@
 import Nav from '../components/Nav' 
-import AuthModal from '../components/AuthModal'
+import SubmitTotal from '../components/SubmitTotal'
 import {useState, useEffect} from 'react'
 
 function Leaderboard(){
@@ -70,7 +70,7 @@ function Leaderboard(){
                 </button>
 
                 {showModal && (
-                    <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
+                    <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp}/>
                 )}
 
             </div>
