@@ -242,7 +242,7 @@ app.get('/messages',async (req, res) => {
 
 app.post('/message', async(req, res) => {
     const client = new MongoClient(uri)
-    const message =req.body.mesage
+    const message =req.body.message
 
     try {
         await client.connect()
