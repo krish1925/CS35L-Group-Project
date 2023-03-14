@@ -1,8 +1,6 @@
 import ChatHeader from "./ChatHeader";
 import MatchesDisplay from "./MatchesDisplay";
 import ChatDisplay from "./ChatDisplay";
-
-
 const ChatContainer = ({ user }) => {
     console.log(user)
     return (
@@ -15,7 +13,6 @@ const ChatContainer = ({ user }) => {
             </div>
 
             <MatchesDisplay matches={user.matches}/>
-
             <ChatDisplay/>
 
         </div>

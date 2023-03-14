@@ -1,6 +1,6 @@
+
 import Chat from "./Chat";
 import ChatInput from "./ChatInput";
-
 function ChatDisplay() {
     return (
         <>
