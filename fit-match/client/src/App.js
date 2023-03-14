@@ -21,9 +21,9 @@ const App = () => {
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         <Route path="/workoutInfo" element={<WorkoutInfo/>}/>
         <Route path="/editProfile" element={<EditProfile/>}/>
-        {authToken && <Route path="/dashboard" element={<Dashboard/>}/>}
-        {authToken && <Route path="/onboarding" element={<OnBoarding/>}/>}
-        {authToken && <Route path="/viewprofile" element={<ViewProfile/>}/>}
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/onboarding" element={<OnBoarding/>}/>
+        <Route path="/viewprofile" element={<ViewProfile/>}/>
       </Routes>
     </BrowserRouter>
   );
