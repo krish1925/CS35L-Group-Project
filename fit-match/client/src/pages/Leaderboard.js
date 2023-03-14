@@ -2,12 +2,14 @@ import Nav from '../components/Nav'
 import SubmitTotal from '../components/SubmitTotal'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function Leaderboard() {
 
     const [leaderboard, setLeaderboard] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [isSignUp, setIsSignUp] = useState(true);
+    const navigate = useNavigate();
 
     const authToken = false;
 
@@ -26,6 +28,10 @@ function Leaderboard() {
                 console.log(error);
             });
     }, []);
+
+    const goDashboard = () => {
+        navigate('/dashboard');
+      };
 
 
     return (
@@ -95,10 +101,13 @@ function Leaderboard() {
                     </table>
                 </div>
 
-
                 <button className="primary-button" onClick={handleClick} style={{ marginTop: '30px' }}>
                     {'Submit Total'}
                 </button>
+                <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px' }}>
+                    {'Return to Dashboard'}
+                </button>
+                
 
                 {showModal && (
                     <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp} />
