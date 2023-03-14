@@ -2,7 +2,7 @@ import { match } from "@reach/router/lib/utils";
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 
-function MatchesDisplay({matches}) {
+function MatchesDisplay({matches, setClickedUser}) {
     const [matchedProfiles, setMatchedProfiles] = useState(null)
 
     const matchedUserIds = matches.map(({user_id}) => user_id)
@@ -27,7 +27,7 @@ function MatchesDisplay({matches}) {
     return (
         <div className="matches-display">
             {matchedProfiles?.map((match, _index) => (
-                <div key = {{_index}} className = "match-card">
+                <div key = {{_index}} className = "match-card" onClick ={setClickedUser(match)}>
                     <div className="img-container">
                         <img src={match?.url} alt ={match?.first_name + ' profile'}/>
                     </div>
