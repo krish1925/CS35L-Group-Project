@@ -61,7 +61,11 @@ const EditProfile=() => {
                 showModal={false}
             />
             <div className="onboarding">
-                <h2>EDIT YOUR PROFILE</h2>
+                <h2>  
+                    <span style={{color:'#007788'}}>EDIT </span>
+                    <span style={{color:'#159897'}}>YOUR </span>
+                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
+                </h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
@@ -184,6 +188,7 @@ const EditProfile=() => {
                         <div className="photo-container">
                             {formData.url && <img src={formData.url} alt="profile picture preview" />}
                         </div>
+                        
                         <label>Preferred Workout Time</label>
                         <div className="multiple-input-container">
                             <input

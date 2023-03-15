@@ -45,7 +45,13 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
     <>
       <Nav whitePage={true} setShowModal={() => {}} showModal={false} />
       <div className="onboarding">
-        <h2>SET UP YOUR WORKOUT PREFERENCES</h2>
+        <h2>
+          <span style={{color:'#007788'}}>SET </span>
+          <span style={{color:'#159897'}}>UP </span>
+          <span style={{color:'#21ada8'}}>YOUR </span>
+          <span style={{color:'#8cd6a2'}}>WORKOUT </span>
+          <span style={{color:'#99eebb'}}>PREFERENCES </span>
+        </h2>
 
         <form onSubmit={handleSubmit}>
           <section>
