@@ -281,7 +281,7 @@ nav .logo-container .logo{
 }
 
 .chat-container .chat-container-header {
-  background: linear-gradient(45deg, #7d944a,#a7c464);
+  background: linear-gradient(45deg, #159897, #21ADA8);
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -291,7 +291,7 @@ nav .logo-container .logo{
 .chat-container .option {
   border: none;
   background-color: #fff;
-  border-bottom: solid 4px #83b11e;
+  border-bottom: solid 4px #78cebd;
   font-size: 20px;
   margin: 2px;
   padding: 10px;
@@ -383,7 +383,7 @@ table {
 }
 
 thead th {
-  background-color: #3f51b5;
+  background-color: #159897;
   color: #fff;
   padding: 10px;
   font-size: 1.2em;
@@ -407,7 +407,7 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
-  color: #3f51b5;
+  color: #3a7978;
   font-weight: bold;
 }
 
@@ -457,4 +457,12 @@ td:nth-child(3) {
 .secondary-button {
   display: inline-block;
   margin-right: 10px;
+}
+
+.tracking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
