@@ -442,16 +442,25 @@ app.post('/mile-log', async (req, res) => {
         const users = database.collection('users')
 
         const user = await users.findOne({ email });
-        const total = user.total
-        const rank = await users.countDocuments({ total: { $gt: total } }) + 1
-        const response = {
-            total: user.total,
-            name: user.first_name,
-            url: user.url,
-            rank: rank 
-        };
-        console.log(response)
-        res.json(response);
+        const total = user.total;
+        if (total == undefined) {
+            const response = {
+                total: "none submitted",
+                name: user.first_name,
+                url: user.url,
+                rank: "?" 
+            };
+            res.json(response);
+        } else {
+            const rank = await users.countDocuments({ total: { $gt: total } }) + 1;
+            const response = {
+                total: user.total,
+                name: user.first_name,
+                url: user.url,
+                rank: rank 
+            };
+            res.json(response);
+        }
      
     } finally {
         await client.close()
