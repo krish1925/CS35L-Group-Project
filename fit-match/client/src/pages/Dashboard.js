@@ -81,8 +81,35 @@ function Dashboard() {
 
     const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
     const filteredGenderedUsers = genderedUsers?.filter(
-      genderedUser => !matchedUserIds.includes(genderedUser.user_id)
-    )
+      genderedUser => {
+        // Exclude users already matched
+        if (matchedUserIds.includes(genderedUser.user_id)) {
+          return false;
+        }
+        if (genderedUser.goals == undefined) {return false;}
+        console.log(user.gender_interest)
+        // Check user's preferred gender
+        if (user.gender_interest === 'Everyone') {
+          console.log("a")
+          return true;
+          
+        }
+        if (user.gender_interest === 'Male' && genderedUser.gender_identity !== 'Male') {
+          return false;
+        }
+        if (user.gender_interest === 'Female' && genderedUser.gender_identity !== 'Female') {
+          return false;
+        }
+
+        
+    
+        // Include users that passed all the conditions
+        return true;
+      
+      }
+    );
+    
+  
     const goLeaderboard = () => {
       navigate('/leaderboard');
     };
