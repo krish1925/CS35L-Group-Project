@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-
+import Nav from '../components/Nav.js';
 
 const ViewProfile= ()=> {
   const location = useLocation();
@@ -26,8 +26,12 @@ const ViewProfile= ()=> {
   }
 
   return (
+    <div>
+            <Nav></Nav>
+            <button className="secondary-button" onClick={() => navigate('/dashboard')}>Go to Dashboard</button>
     <div className="ViewProfile">
-      <button className="secondary-button" onClick={() => navigate('/dashboard')}>Go to Dashboard</button>
+
+      
       <h2>{user.first_name}</h2>
       <img src={user.url} alt={"photo"} style={{maxWidth: "300px", maxgitHeight: "300px"}}/>
       <p>Gender: {user.gender_identity}</p>
@@ -39,6 +43,7 @@ const ViewProfile= ()=> {
       <p>Preferred Workout Intensity: {user.workout_intensity}</p>
       
       <button className="secondary-button" onClick={handleClick}>Edit</button> 
+    </div>
     </div>
   );
 }
