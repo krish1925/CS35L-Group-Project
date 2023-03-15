@@ -245,7 +245,11 @@ app.put('/user', async (req, res) => {
                 gender_interest: formData.gender_interest,
                 url: formData.url,
                 about: formData.about,
-                matches: formData.matches
+                matches: formData.matches,
+                workout_time: formData.workout_time,
+                workout_intensity: formData.workout_intensity,
+                favorite_exercise: formData.favorite_exercise,
+                goals: formData.goals
             },
         }
 
