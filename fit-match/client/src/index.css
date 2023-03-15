@@ -30,7 +30,7 @@ html, body {
 
 .secondary-button {
   color: #FFFF;
-  background: linear-gradient(to right, #952532, #FF4057, #f78693);
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   font-weight: 500;
   font-size: 20px;
   padding: 12px 30px;
@@ -273,7 +273,7 @@ nav .logo-container .logo{
 }
 
 .chat-container .chat-container-header {
-  background: linear-gradient(45deg, #FF4057,#952532);
+  background: linear-gradient(45deg,#21ADA8, #007788);
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -283,7 +283,7 @@ nav .logo-container .logo{
 .chat-container .option {
   border: none;
   background-color: #fff;
-  border-bottom: solid 4px #FF4057;
+  border-bottom: solid 4px #21ADA8;
   font-size: 20px;
   margin: 2px;
   padding: 10px;
