@@ -27,7 +27,7 @@ const ChatHeader = ({ user }) => {
         </div>
         <h3>{user.first_name}</h3>
       </div>
-      <i className="log-out-icon" onClick={handleLogout}>⇦</i> 
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
     </div>
   )
 }

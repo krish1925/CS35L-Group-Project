@@ -280,6 +280,17 @@ nav .logo-container .logo{
   align-items: center;
 }
 
+.chat-container .chat-container-header .logout-button {
+  color: #007788;
+  font-size: 15px;
+  font-weight: bold;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: none;
+  margin-right: 10px;
+}
+
 .chat-container .option {
   border: none;
   background-color: #fff;
