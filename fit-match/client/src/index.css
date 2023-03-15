@@ -273,7 +273,7 @@ nav .logo-container .logo{
 }
 
 .chat-container .chat-container-header {
-  background: linear-gradient(45deg, #159897, #21ADA8);
+  background: linear-gradient(45deg, #FF4057,#952532);
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -283,7 +283,7 @@ nav .logo-container .logo{
 .chat-container .option {
   border: none;
   background-color: #fff;
-  border-bottom: solid 4px #78cebd;
+  border-bottom: solid 4px #FF4057;
   font-size: 20px;
   margin: 2px;
   padding: 10px;
