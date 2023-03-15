@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap');
+
 .overlay {
     background: white; /* centers the child vertically */
     height: 100vh; 
@@ -7,18 +9,14 @@
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
 
 .overlay home{
     display: flex;
     flex-direction: column;
     margin-top: -20px;
-    justify-content: center; /* centers the child horizontally */
-    /* position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    justify-content: center; 
   }
   
 .overlay h2{
@@ -26,8 +24,9 @@
   }
 
 .overlay h1{
-    color: #36444d;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 60px;
+    font-family: 'Readex Pro', sans-serif;
     padding-bottom: 0px;
     align-content: center;
     margin-bottom: 0;
@@ -37,7 +36,7 @@
 
 
 .overlay button{
-    background-color: #ff4057;
+    background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -45,7 +44,7 @@
 }
 
 .overlay button:hover{
-    background: #36444d;
+    background: rgb(26, 25, 25);
   }
   
   

@@ -58,7 +58,12 @@ function OnBoarding() {
                 showModal={false}
             />
             <div className="onboarding">
-                <h2>SET UP YOUR PROFILE</h2>
+                <h2>
+                    <span style={{color:'#007788'}}>SET </span>
+                    <span style={{color:'#159897'}}>UP </span>
+                    <span style={{color:'#21ada8'}}>YOUR </span>
+                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
+                </h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
@@ -145,16 +150,6 @@ function OnBoarding() {
                             />
                             <label htmlFor="other-gender-identity">Other</label>
                         </div>
-
-                        <label htmlFor="show-gender">Show gender on my profile</label>
-
-                        <input 
-                            id="show-gender"
-                            type="checkbox"
-                            name="show_gender"
-                            onChange={handleChange}
-                            checked={formData.show_gender}    
-                         />
 
                         <label>Show Me</label>
                         

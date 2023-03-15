@@ -5,22 +5,25 @@ import { useCookies } from 'react-cookie'
 import Nav from '../components/Nav'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 
-function EditProfile() {
+const EditProfile=() => {
+    const location = useLocation();
+    const user = location.state.user;
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,
-        first_name: undefined,
-        last_name: undefined,
-        show_gender: undefined,
-        gender_identity: undefined,
-        gender_interest: undefined,
-        url: undefined,
-        about: undefined,
-        workout_time: undefined,
-        workout_intensity: undefined,
-        favorite_exercise: undefined,
-        goals: undefined,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        show_gender: user.show_gender,
+        gender_identity: user.gender_identity,
+        gender_interest: user.gender_interest,
+        url: user.url,
+        about: user.about,
+        workout_time: user.workout_time,
+        workout_intensity: user.workout_intensity,
+        favorite_exercise: user.favorite_exercise,
+        goals: user.goals,
     })
 
     let navigate = useNavigate()
@@ -58,7 +61,11 @@ function EditProfile() {
                 showModal={false}
             />
             <div className="onboarding">
-                <h2>EDIT YOUR PROFILE</h2>
+                <h2>  
+                    <span style={{color:'#007788'}}>EDIT </span>
+                    <span style={{color:'#159897'}}>YOUR </span>
+                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
+                </h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
@@ -82,7 +89,36 @@ function EditProfile() {
                             onChange={handleChange}
                         />
 
-
+<label>Birthday</label>
+                        <div className="multiple-input-container">
+                            <input 
+                                id="dob_month"
+                                type="number"
+                                name="dob_month"
+                                placeholder="MM"
+                                required={true}
+                                value={formData.dob_month}
+                                onChange={handleChange}
+                            />
+                            <input 
+                                id="dob_day"
+                                type="number"
+                                name="dob_day"
+                                placeholder="DD"
+                                required={true}
+                                value={formData.dob_day}
+                                onChange={handleChange}
+                            />
+                            <input 
+                                id="dob_year"
+                                type="number"
+                                name="dob_year"
+                                placeholder="YYYY"
+                                required={true}
+                                value={formData.dob_year}
+                                onChange={handleChange}
+                            />
+                        </div>
 
                         <label>Gender</label>
                         <div className="multiple-input-container">
@@ -114,16 +150,6 @@ function EditProfile() {
                             />
                             <label htmlFor="other-gender-identity">Other</label>
                         </div>
-
-                        <label htmlFor="show-gender">Show gender on my profile</label>
-
-                        <input
-                            id="show-gender"
-                            type="checkbox"
-                            name="show_gender"
-                            onChange={handleChange}
-                            checked={formData.show_gender}
-                        />
 
                         <label>Show Me</label>
 
@@ -167,6 +193,17 @@ function EditProfile() {
                             onChange={handleChange}
                         />
 
+                        <label htmlFor="goals">Goals</label>
+                        <input
+                            id="goals"
+                            type="text"
+                            name="goals"
+                            placeholder="What are your gym goals?"
+                           
+                            value={formData.goals}
+                            onChange={handleChange}
+                        />
+
                     </section>
 
                     <section>
@@ -181,6 +218,7 @@ function EditProfile() {
                         <div className="photo-container">
                             {formData.url && <img src={formData.url} alt="profile picture preview" />}
                         </div>
+
                         <label>Preferred Workout Time</label>
                         <div className="multiple-input-container">
                             <input
@@ -251,16 +289,6 @@ function EditProfile() {
                             placeholder="What's your favorite thing to do in the gym?"
                           
                             value={formData.favorite_exercise}
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="goals">Goals</label>
-                        <input
-                            id="goals"
-                            type="text"
-                            name="goals"
-                            placeholder="What are your gym goals?"
-                           
-                            value={formData.goals}
                             onChange={handleChange}
                         />
                         <input type="submit" />

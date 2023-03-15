@@ -1,28 +1,29 @@
-import colorLogo from '../images/fitmatch.png'
+import { useLocation } from 'react-router-dom';
+import colorLogo from '../images/fitmatch.png';
 
-function Nav({/*authToken,*/ whitePage, setShowModal, showModal, setIsSignUp}) {
+function Nav({ setShowModal, showModal, setIsSignUp }) {
+  const location = useLocation();
+  const authToken = false;
 
-    function handleClick() {
-        setShowModal(true);
-        setIsSignUp(false);
-    }
+  function handleClick() {
+    setShowModal(true);
+    setIsSignUp(false);
+  }
 
-    const authToken = false;
-    return (
-    
-        <nav>
-            <div className="logo-container">
-                <img className="logo" src={whitePage ? colorLogo : colorLogo}/>
-            </div>
+  return (
+    <nav>
+      <div className="logo-container">
+        <img className="logo" src={colorLogo} />
+      </div>
 
-            {!authToken && !whitePage && (<button 
-                className="nav-button"
-                onClick={handleClick}
-                disabled={showModal}
-            >Log In</button>)}
-        </nav>
-        
-    );
+      {location.pathname !== '/leaderboard' && !authToken && (
+        <button
+          className="nav-button"
+          onClick={handleClick}
+          disabled={showModal}>Log In</button>
+      )}
+    </nav>
+  );
 }
 
 export default Nav;
