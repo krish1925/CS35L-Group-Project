@@ -193,7 +193,7 @@ nav .logo-container .logo{
 }
 
 .onboarding form input[type="radio"]:checked + label {
-  background-color: #bee9cf; 
+  background-color: #c6e4e1; 
 }
 
 .onboarding form input[type="submit"] {
@@ -206,11 +206,7 @@ nav .logo-container .logo{
 }
 
 .onboarding form input[type="submit"]:hover {
-  background-color: rgb(235, 236, 235);
-}
-
-.onboarding form input[type="submit"]:active {
-  background-color: #d2e7a3;
+  background: black;
 }
 
 .onboarding form .photo-container img{
@@ -437,8 +433,6 @@ td:nth-child(3) {
   text-align: center;
 }
 
-
-
 .ViewProfile p {
   margin: 10px 0;
   font-size: 18px;
@@ -459,6 +453,5 @@ td:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 }
