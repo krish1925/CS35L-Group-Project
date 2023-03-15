@@ -29,25 +29,36 @@ function OnBoarding() {
     let navigate = useNavigate()
 
 
-    const handleSubmit = async(e) => {
-        if(formData.dob_day>31 || formData.dob_month >12 || formData.dob_year >2023){
-            alert("Invalid birthday")
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        const isInvalidBirthday = formData.dob_day > 31 ||
+          formData.dob_month > 12 ||
+          formData.dob_year > 2023;
+      
+        const isFocusOnSchool = formData.dob_year > 2010;
+      
+        if (isInvalidBirthday) {
+          alert("Invalid birthday");
+          return; // early return to avoid clearing form data
         }
-        else if(formData.dob_year > 2010){
-            alert("Focus on school bro")
+      
+        if (isFocusOnSchool) {
+          alert("Focus on school bro");
+          return; // early return to avoid clearing form data
         }
-        else{
-        console.log('submitted');
-        e.preventDefault()
+      
+        console.log("submitted");
+      
         try {
-            const response = await axios.put('http://localhost:8000/user', {formData})
-            const success = response.status === 200
-            if (success) navigate('/dashboard')
+          const response = await axios.put("http://localhost:8000/user", { formData });
+          const success = response.status === 200;
+          if (success) navigate("/dashboard");
         } catch (err) {
-            console.log(err)
+          console.log(err);
         }
-    }
-    }
+      };
+      
 
     function handleChange(e) {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
