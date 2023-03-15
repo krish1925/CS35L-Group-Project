@@ -192,10 +192,16 @@ app.get('/gendered-users', async (req, res) => {
         await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
-        const query = {gender_identity: {$eq:gender}}
+        const query = {gender_identity: {$eq:gender}}  
         const foundUsers = await users.find(query).toArray()
+        const allUsers = await users.find().toArray()
         //edited here
-        res.json(foundUsers)
+        if (gender != 'male' || gender != 'female') {
+            res.send(allUsers)
+        } else {
+            res.send(foundUsers)
+        }
+        
     } finally {
         await client.close()
     }
