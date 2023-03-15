@@ -40,8 +40,14 @@ function Dashboard() {
 
     useEffect(() => {
       getUser()
-      getGenderedUsers()
     }, [] )
+
+    //added this here
+    useEffect(() => {
+      if (user) {
+        getGenderedUsers()
+      }
+    }, [user] )
 
 
     const [lastDirection, setLastDirection] = useState();
