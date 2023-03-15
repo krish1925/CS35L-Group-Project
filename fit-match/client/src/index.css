@@ -129,7 +129,7 @@ nav .logo-container .logo{
 /*------- OnBoarding Page -------*/
 
 .onboarding {
-  border-top: solid 1px #989996;
+  border-top: solid 1px black;
 }
 
 .onboarding form {
@@ -149,7 +149,7 @@ nav .logo-container .logo{
   padding: 15px 30px;
   margin: 10px 0;
   font-size: 15px;
-  border: solid 2px rgb(217, 217, 217);
+  border: solid 2px #007788;
   border-radius: 10px;
 }
 
@@ -174,7 +174,7 @@ nav .logo-container .logo{
 
 .onboarding form .multiple-input-container label {
   padding: 10px;
-  border: solid 2px rgb(144, 144, 144);
+  border: solid 2px #007788;
   border-radius: 10px;
   transition: all 0.3s;
   margin-right: 10px;
@@ -193,7 +193,16 @@ nav .logo-container .logo{
 }
 
 .onboarding form input[type="radio"]:checked + label {
-  border: solid 2px #95d609; 
+  background-color: #bee9cf; 
+}
+
+.onboarding form input[type="submit"] {
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
 }
 
 .onboarding form input[type="submit"]:hover {

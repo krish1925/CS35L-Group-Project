@@ -58,7 +58,12 @@ function OnBoarding() {
                 showModal={false}
             />
             <div className="onboarding">
-                <h2>SET UP YOUR PROFILE</h2>
+                <h2> 
+                    <span style={{color:'#007788'}}>SET </span>
+                    <span style={{color:'#159897'}}>UP </span>
+                    <span style={{color:'#21ADA8'}}>YOUR </span>
+                    <span style={{color:'#8cd6a2'}}>PROFILE </span>
+                </h2> 
 
                 <form onSubmit={handleSubmit}>
                     <section>
