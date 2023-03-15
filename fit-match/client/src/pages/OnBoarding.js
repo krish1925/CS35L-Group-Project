@@ -30,6 +30,13 @@ function OnBoarding() {
 
 
     const handleSubmit = async(e) => {
+        if(formData.dob_day>31 || formData.dob_month >12 || formData.dob_year >2023){
+            alert("Invalid birthday")
+        }
+        else if(formData.dob_year > 2010){
+            alert("Focus on school bro")
+        }
+        else{
         console.log('submitted');
         e.preventDefault()
         try {
@@ -39,6 +46,7 @@ function OnBoarding() {
         } catch (err) {
             console.log(err)
         }
+    }
     }
 
     function handleChange(e) {

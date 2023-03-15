@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap');
+
+.overlay {
+    background: rgb(9, 9, 9); /* centers the child vertically */
+    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay home{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    justify-content: center; 
+  }
+  
+.overlay h2{
+    margin-top: 0.5em;
+  }
+
+.overlay h1{
+    color: white;
+    font-size: 90px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 0px;
+    align-content: center;
+    margin-bottom: 0;
+    /* text-shadow: 2px 2px 5px black; */
+
+}
+
+
+.overlay button{
+    background: linear-gradient(to right, #d75a12, #b9620b, #dc7814, #eec399);
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.overlay button:hover{
+    background: rgb(34, 22, 22);
+  }
+  
+  
