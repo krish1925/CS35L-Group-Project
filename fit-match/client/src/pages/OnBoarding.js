@@ -32,7 +32,7 @@ function OnBoarding() {
         try {
             const response = await axios.put('http://localhost:8000/user', {formData})
             const success = response.status === 200
-            if (success) navigate('/workoutInfo')
+            if (success) navigate('/dashboard')
         } catch (err) {
             console.log(err)
         }
@@ -193,7 +193,17 @@ function OnBoarding() {
                             value={formData.about}
                             onChange={handleChange}
                         />
-                        <input type="submit"/>
+                        <label htmlFor="goals">Goals</label>
+                        <input
+                            id="goals"
+                            type="text"
+                            name="goals"
+                            placeholder="What are your gym goals?"
+                           
+                            value={formData.goals}
+                            onChange={handleChange}
+                        />
+                        
                     </section>
 
                     <section>
@@ -209,6 +219,81 @@ function OnBoarding() {
                         <div className="photo-container">
                          {formData.url &&   <img src={formData.url} alt="profile picture preview"/>}
                         </div>
+
+                        <label>Preferred Workout Time</label>
+                        <div className="multiple-input-container">
+                            <input
+                                id="morning-workout-time"
+                                type="radio"
+                                name="workout_time"
+                                value="Morning"
+                                onChange={handleChange}
+                                checked={formData.workout_time === 'Morning'}
+                            />
+                            <label htmlFor="morning-workout-time">Morning</label>
+                            <input
+                                id="midday-workout-time"
+                                type="radio"
+                                name="workout_time"
+                                value="Midday"
+                                onChange={handleChange}
+                                checked={formData.workout_time === 'Midday'}
+                            />
+                            <label htmlFor="midday-workout-time">Midday</label>
+                            <input
+                                id="night-workout-time"
+                                type="radio"
+                                name="workout_time"
+                                value="Night"
+                                onChange={handleChange}
+                                checked={formData.workout_time === 'Night'}
+                            />
+                            <label htmlFor="night-workout-time">Night</label>
+                        </div>
+
+                        <label>Preferred Workout Intensity</label>
+
+                        <div className="multiple-input-container">
+                            <input
+                                id="light-workout-intensity"
+                                type="radio"
+                                name="workout_intensity"
+                                value="Light"
+                                onChange={handleChange}
+                                checked={formData.workout_intensity === 'Light'}
+                            />
+                            <label htmlFor="light-workout-intensity">Light</label>
+                            <input
+                                id="medium-workout-intensity"
+                                type="radio"
+                                name="workout_intensity"
+                                value="Medium"
+                                onChange={handleChange}
+                                checked={formData.workout_intensity === 'Medium'}
+                            />
+                            <label htmlFor="medium-workout-intensity">Medium</label>
+                            <input
+                                id="intense-workout-intensity"
+                                type="radio"
+                                name="workout_intensity"
+                                value="Intense"
+                                onChange={handleChange}
+                                checked={formData.workout_intensity === 'Intense'}
+                            />
+                            <label htmlFor="intense-workout-intensity">Intense</label>
+                        </div>
+                        <label htmlFor="favorite_exercise">Favorite Exercise</label>
+                        <input
+                            id="favorite_exercise"
+                            type="text"
+                            name="favorite_exercise"
+                            placeholder="What's your favorite thing to do in the gym?"
+                          
+                            value={formData.favorite_exercise}
+                            onChange={handleChange}
+                        />
+
+                        <input type="submit"/>
                     </section>
 
                 </form>

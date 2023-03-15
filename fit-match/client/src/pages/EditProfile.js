@@ -91,7 +91,7 @@ const EditProfile=() => {
                             onChange={handleChange}
                         />
 
-<label>Birthday</label>
+                        <label>Birthday</label>
                         <div className="multiple-input-container">
                             <input 
                                 id="dob_month"
