@@ -44,6 +44,7 @@
 //         }));
 //     }
     
+<<<<<<< HEAD
 //     const handleLogSubmit = async (e) => {
 //         e.preventDefault();
 //         try {
@@ -83,3 +84,71 @@
 // }
 
 // export default Tracking;
+=======
+
+    const goLeaderboard = () => {
+        navigate('/leaderboard');
+    };
+
+    const [bench, setBench] = useState(false)
+    const [squat, setSquat] = useState(false)
+    const [deadlift, setDeadlift] = useState(false)
+
+
+
+    return (
+        <>
+    <Nav 
+                whitePage={true}
+                setShowModal={() => {}}
+                showModal={false}
+            />
+            <div className='tracking-container'>
+            <div className="onboarding">
+                <h2>TRACK YOUR PROGRESS</h2>
+
+                <form onSubmit={handleSubmit}>
+ 
+                        <label>Lift</label>
+                        <div className="multiple-input-container">
+                            <input 
+                                id="bench"
+                                type="radio"
+                                name="lift"
+                                value="bench"
+                                onChange={handleChange}
+                                checked={bench}
+                            />
+                            <label htmlFor="bench">Bench</label>
+                            <input 
+                                id="squat"
+                                type="radio"
+                                name="lift"
+                                value="squat"
+                                onChange={handleChange}
+                                checked={squat}
+                            />
+                            <label htmlFor="squat">Squat</label>
+                            <input 
+                                id="deadlift"
+                                type="radio"
+                                name="lift"
+                                value="deadlift"
+                                onChange={handleChange}
+                                checked={deadlift}
+                            />
+                            <label htmlFor="deadlift">Deadlift</label>
+                        </div>   
+                        
+
+                    
+
+                </form>
+
+            </div></div>
+        </>
+    );
+}
+
+export default Tracking;
+>>>>>>> e4fe948d0a9944b377c2182d003c3004f2ba17a4

@@ -4,7 +4,6 @@ import ViewProfile from './pages/Viewprofile'
 import Dashboard from './pages/Dashboard.js'
 import OnBoarding from './pages/OnBoarding'
 import Leaderboard from './pages/Leaderboard'
-import WorkoutInfo from './pages/WorkoutInfo'
 import EditProfile from './pages/EditProfile'
 import Tracking from './pages/Tracking'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -21,7 +20,6 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/>
         <Route path="/tracking" element={<Tracking/>}/>
-        <Route path="/workoutInfo" element={<WorkoutInfo/>}/>
         <Route path="/editProfile" element={<EditProfile/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/onboarding" element={<OnBoarding/>}/>

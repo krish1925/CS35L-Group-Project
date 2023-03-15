@@ -16,7 +16,7 @@ function Nav({ setShowModal, showModal, setIsSignUp }) {
         <img className="logo" src={colorLogo} />
       </div>
 
-      {location.pathname !== '/leaderboard' && !authToken && (
+      {location.pathname !== '/leaderboard' && location.pathname !== '/onboarding' && location.pathname !== '/editProfile' && location.pathname !== '/tracking'&& location.pathname !== '/workoutInfo' && location.pathname !== '/dashboard'  && location.pathname !== '/viewprofile' && !authToken && (
         <button
           className="nav-button"
           onClick={handleClick}

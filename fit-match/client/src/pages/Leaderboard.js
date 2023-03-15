@@ -49,8 +49,11 @@ function Leaderboard() {
                 setShowModal={setShowModal}
                 showModal={showModal}
                 setIsSignUp={setIsSignUp} />
+<<<<<<< HEAD
             <div className="leaderboard_home"style={{ marginTop: '40px' }}>
 
+=======
+>>>>>>> e4fe948d0a9944b377c2182d003c3004f2ba17a4
             <div className="leaderboard_home">
             <h1 className="primary-title" style={{fontSize: '60px', marginBottom: '20px'}}>Leaderboard</h1>
                 <div className="leaderboard_table">
@@ -117,6 +120,7 @@ function Leaderboard() {
                     </table>
                 </div>
 
+<<<<<<< HEAD
                 <button className="primary-button" onClick={handleClick} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px' }}>
                     {'Submit Total'}
                 </button>
@@ -127,6 +131,16 @@ function Leaderboard() {
                     {'Return to Dashboard'}
                 </button>
                 
+=======
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                    <button className="primary-button" onClick={handleClick} style={{ marginRight: '20px', fontSize: '20px' }}>
+                        {'Submit Total'}
+                        </button>
+                    <button className="primary-button" onClick={goDashboard} style={{ marginLeft: '20px', fontSize: '20px' }}>
+                        {'Return to Dashboard'}
+                    </button>
+                </div>
+>>>>>>> e4fe948d0a9944b377c2182d003c3004f2ba17a4
 
                 {showModal && (
                     <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp} />

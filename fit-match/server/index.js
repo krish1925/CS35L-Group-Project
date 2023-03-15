@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     res.json('hello')
 }) 
 
+//signing up to the database
 app.post('/signup', async (req, res) => {
     const client = new MongoClient(uri)
     const { email, password } = req.body
@@ -47,10 +48,13 @@ app.post('/signup', async (req, res) => {
         res.status(201).json({ token, userId: generatedUserId})
     } catch (err) {
         console.log(err)
+    //added this finally
+    } finally {
+        await client.close()
     }
 })
 
-
+//updating the leaderboard using submit button
 app.post('/submitTotal', async (req, res) => {
     const client = new MongoClient(uri)
     try {
@@ -74,7 +78,7 @@ app.post('/submitTotal', async (req, res) => {
 })
 
 
-
+//logging into the database
 app.post('/login', async (req, res) => {
     const client = new MongoClient(uri)
     const {email, password} = req.body
@@ -105,8 +109,7 @@ app.post('/login', async (req, res) => {
 })
 
 
-
-//get user
+//get individual user
 app.get('/user', async(req, res) => {
     const client = new MongoClient(uri)
     const userId = req.query.userId
@@ -124,6 +127,7 @@ app.get('/user', async(req, res) => {
     }
 })
 
+//get all the users by their user ids in the database
 app.get('/users', async (req, res) => {
     const client = new MongoClient(uri)
     const userIds = JSON.parse(req.query.userIds)
@@ -150,6 +154,7 @@ app.get('/users', async (req, res) => {
         await client.close()
     }
 })
+
 
 app.get('/leaderboard', async (req, res) => {
     const client = new MongoClient(uri);
@@ -179,8 +184,7 @@ app.get('/leaderboard', async (req, res) => {
     }
   });
   
-
-
+//getting the genered-users in database
 app.get('/gendered-users', async (req, res) => {
     const client = new MongoClient(uri)
     const gender = req.query.gender
@@ -190,9 +194,8 @@ app.get('/gendered-users', async (req, res) => {
         const users = database.collection('users')
         const query = {gender_identity: {$eq:gender}}
         const foundUsers = await users.find(query).toArray()
-
-        const returnedUsers = await users.find().toArray()
-        res.send(returnedUsers)
+        //edited here
+        res.json(foundUsers)
     } finally {
         await client.close()
     }
@@ -216,6 +219,7 @@ app.get('/user', async (req, res) => {
     }
 })
 
+//updating a user in the database
 app.put('/user', async (req, res) => {
     const client = new MongoClient(uri)
     const formData = req.body.formData
@@ -236,7 +240,7 @@ app.put('/user', async (req, res) => {
                 dob_day: formData.dob_day,
                 dob_month: formData.dob_month,
                 dob_year: formData.dob_year,
-                show_gender: formData.show_gender,
+                //took away show gender
                 gender_identity: formData.gender_identity,
                 gender_interest: formData.gender_interest,
                 url: formData.url,
@@ -254,6 +258,7 @@ app.put('/user', async (req, res) => {
     }
 })
 
+//putting workout preferences in database
 app.put('/workout', async (req, res) => {
     const client = new MongoClient(uri)
     const formData = req.body
@@ -283,6 +288,7 @@ app.put('/workout', async (req, res) => {
     }
 })
 
+//updating profile if edited in database
 app.put('/editProfile', async (req, res) => {
     const client = new MongoClient(uri)
     const formData = req.body.formData
@@ -339,8 +345,7 @@ app.put('/editProfile', async (req, res) => {
     }
 })
 
-
-
+//update a user with a match
 app.put('/addmatch', async(req, res) => {
     const client = new MongoClient(uri)
     const {userId, matchedUserId} = req.body
@@ -361,7 +366,7 @@ app.put('/addmatch', async(req, res) => {
     }
 })
 
-
+//sending messages between two users
 app.get('/messages',async (req, res) => {
     const client = new MongoClient(uri)
     const {userId, correspondingUserId} = req.query
@@ -381,6 +386,7 @@ app.get('/messages',async (req, res) => {
 }
 })
 
+//adding a message to database
 app.post('/message', async(req, res) => {
     const client = new MongoClient(uri)
     const message =req.body.message

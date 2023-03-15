@@ -7,7 +7,7 @@ html, body {
 }
 
 *{
-  font-family: 'Readex Pro', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .primary-title {
@@ -113,7 +113,7 @@ nav .logo-container .logo{
 }
 
 .auth-modal h2 {
-  color: #36444d;
+  color: black;
 }
 
 .auth-modal input[type=password],
@@ -123,7 +123,7 @@ nav .logo-container .logo{
   padding: 8px;
   margin: 8px;
   font-size: 20px;
-  color: #36444d;
+  color: black;
 }
 
 /*------- OnBoarding Page -------*/
@@ -273,17 +273,28 @@ nav .logo-container .logo{
 }
 
 .chat-container .chat-container-header {
-  background: linear-gradient(45deg, #FF4057,#952532);
+  background: linear-gradient(45deg,#21ADA8, #007788);
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.chat-container .chat-container-header .logout-button {
+  color: #007788;
+  font-size: 15px;
+  font-weight: bold;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: none;
+  margin-right: 10px;
+}
+
 .chat-container .option {
   border: none;
   background-color: #fff;
-  border-bottom: solid 4px #FF4057;
+  border-bottom: solid 4px #21ADA8;
   font-size: 20px;
   margin: 2px;
   padding: 10px;
@@ -339,16 +350,23 @@ nav .logo-container .logo{
   justify-content: center;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f2f2f2;
+  height: 100vh;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Set to a fixed value */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 20px;
 }
 
 .leaderboard_table {
@@ -358,15 +376,16 @@ table {
 
 @media (max-width: 768px) {
   table {
-    font-size: 0.8em;
+    font-size: 20px;
   }
 
   td:first-child {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   td:nth-child(2) {
     padding-left: 10px;
+    font-size: 20px;
   }
 
   td:nth-child(3) {
@@ -375,14 +394,14 @@ table {
 }
 
 thead th {
-  background-color: #159897;
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   color: #fff;
   padding: 10px;
   font-size: 1.2em;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #ddd;
+  background-color: #cbd2ce;
 }
 
 tbody td {
@@ -399,7 +418,7 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
-  color: #3a7978;
+  color: #007788;
   font-weight: bold;
 }
 
@@ -409,7 +428,7 @@ td:nth-child(3) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* or any other value that you prefer */
+  height: 70vh; /* or any other value that you prefer */
 }
 
 

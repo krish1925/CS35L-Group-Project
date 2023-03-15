@@ -15,6 +15,9 @@ const EditProfile=() => {
         user_id: cookies.UserId,
         first_name: user.first_name,
         last_name: user.last_name,
+        dob_day : user.dob_day,
+        dob_month : user.dob_month,
+        dob_year: user.dob_year,
         show_gender: user.show_gender,
         gender_identity: user.gender_identity,
         gender_interest: user.gender_interest,
@@ -27,8 +30,7 @@ const EditProfile=() => {
     })
 
     let navigate = useNavigate()
-
-
+    
     const handleSubmit = async (e) => {
         console.log('submitted');
         e.preventDefault()
@@ -89,7 +91,7 @@ const EditProfile=() => {
                             onChange={handleChange}
                         />
 
-<label>Birthday</label>
+                        <label>Birthday</label>
                         <div className="multiple-input-container">
                             <input 
                                 id="dob_month"
