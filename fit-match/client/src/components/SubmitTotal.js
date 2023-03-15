@@ -25,7 +25,10 @@ function SubmitTotal({ setShowModal, isSignUp }) {
         `http://localhost:8000/submitTotal`,
         { total, email } 
       );
-      const success = response.status === 201
+      if  (response.status === 404) {
+        setError('Invalid Email')
+      }
+
       setShowModal(false)
       window.location.reload()
   

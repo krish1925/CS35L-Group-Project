@@ -442,6 +442,11 @@ app.post('/mile-log', async (req, res) => {
         const users = database.collection('users')
 
         const user = await users.findOne({ email });
+        if (!user) {
+            const response = "error"
+            res.json(response)
+            return
+          }
         const total = user.total;
         if (total == undefined) {
             const response = {

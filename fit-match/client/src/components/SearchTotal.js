@@ -20,17 +20,21 @@ function SearchTotal({ setShowSearch, searchResult, setSearchResult}) {
     e.preventDefault();
 
     try {
-        
         const response = await axios.get('http://localhost:8000/searchTotal', {
           params: {email}
         })
+      if (response.data == 'error'){
+        setError('Invalid Email')
+        return
+      }
       setShowSearch(false)
       setSearchResult(response.data)
       console.log(searchResult)
   
     } catch (error) {
       console.log(error);
-    }
+    } 
+    
   };
   
 
