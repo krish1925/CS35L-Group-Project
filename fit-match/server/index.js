@@ -195,8 +195,7 @@ app.get('/gendered-users', async (req, res) => {
         const query = {gender_identity: {$eq:gender}}  
         const foundUsers = await users.find(query).toArray()
         const allUsers = await users.find().toArray()
-        //edited here
-        if (gender != 'male' || gender != 'female') {
+        if (gender != 'male' && gender != 'female') {
             res.send(allUsers)
         } else {
             res.send(foundUsers)
