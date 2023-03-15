@@ -5,22 +5,25 @@ import { useCookies } from 'react-cookie'
 import Nav from '../components/Nav'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 
-function EditProfile() {
+const EditProfile=() => {
+    const location = useLocation();
+    const user = location.state.user;
     const [cookies, setCookie, removeCookie] = useCookies(['user'])
     const [formData, setFormData] = useState({
         user_id: cookies.UserId,
-        first_name: undefined,
-        last_name: undefined,
-        show_gender: undefined,
-        gender_identity: undefined,
-        gender_interest: undefined,
-        url: undefined,
-        about: undefined,
-        workout_time: undefined,
-        workout_intensity: undefined,
-        favorite_exercise: undefined,
-        goals: undefined,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        show_gender: user.show_gender,
+        gender_identity: user.gender_identity,
+        gender_interest: user.gender_interest,
+        url: user.url,
+        about: user.about,
+        workout_time: user.workout_time,
+        workout_intensity: user.workout_intensity,
+        favorite_exercise: user.favorite_exercise,
+        goals: user.goals,
     })
 
     let navigate = useNavigate()

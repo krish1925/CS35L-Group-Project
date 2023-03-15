@@ -14,7 +14,7 @@ const ViewProfile= ({user})=> {
       };
 
       function handleClick() {
-        navigate('/editProfile')
+        navigate('/editProfile', { state: { user } });
     }
     const navigate = useNavigate();
 
