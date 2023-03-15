@@ -10,6 +10,11 @@ html, body {
   font-family: 'Readex Pro', sans-serif;
 }
 
+.overlay h1 {
+  font-family: 'Readex Pro', sans-serif;
+  font-size: 60px;
+}
+
 .primary-title {
   font-size: 90px;
   color: #fff;
