@@ -118,7 +118,8 @@ nav .logo-container .logo{
 
 .auth-modal input[type=password],
 .auth-modal input[type=email],
-.auth-modal input[type=total]
+.auth-modal input[type=total],
+.auth-modal input[type=number]
 {
   padding: 8px;
   margin: 8px;

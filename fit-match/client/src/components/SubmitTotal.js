@@ -34,6 +34,7 @@ function SubmitTotal({ setShowModal, isSignUp }) {
   
     } catch (error) {
       console.log(error);
+      setError('Invalid Email')
     }
   };
   
@@ -47,7 +48,7 @@ function SubmitTotal({ setShowModal, isSignUp }) {
 
       <form onSubmit={handleSubmit}>
         <input
-          type='total'
+          type='number'
           id='total'
           name='total'
           placeholder='total'
