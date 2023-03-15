@@ -283,6 +283,7 @@ nav .logo-container .logo{
 .chat-container .chat-container-header .logout-button {
   color: #007788;
   font-size: 15px;
+  font-weight: bold;
   background: #fff;
   padding: 8px 20px;
   border-radius: 30px;
