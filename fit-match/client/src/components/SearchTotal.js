@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function SubmitTotal({ setShowModal, isSignUp }) {
+function SearchTotal({ setShowSearch, searchResult, setSearchResult}) {
   const [total, setTotal] = useState(null)
   const [email, setEmail] = useState(null);
   const [error, setError] = useState(null);
@@ -11,31 +11,30 @@ function SubmitTotal({ setShowModal, isSignUp }) {
   const navigate = useNavigate(); // define navigate using useNavigate hook
 
   function handleClick() {
-    setShowModal(false);
+    setShowSearch(false);
     window.location.reload()
   }
 
   const handleSubmit = async (e) => {
     
     e.preventDefault();
-    
-    try {
-        
-      const response = await axios.post(
-        `http://localhost:8000/submitTotal`,
-        { total, email } 
-      );
-      if  (response.status === 404) {
-        setError('Invalid Email')
-      }
 
-      setShowModal(false)
-      window.location.reload()
+    try {
+        const response = await axios.get('http://localhost:8000/searchTotal', {
+          params: {email}
+        })
+      if (response.data == 'error'){
+        setError('Invalid Email')
+        return
+      }
+      setShowSearch(false)
+      setSearchResult(response.data)
+      console.log(searchResult)
   
     } catch (error) {
       console.log(error);
-      setError('Invalid Email')
-    }
+    } 
+    
   };
   
 
@@ -44,21 +43,13 @@ function SubmitTotal({ setShowModal, isSignUp }) {
       <div className='close-icon' onClick={handleClick}>
         Ⓧ
       </div>
-      <h2>{isSignUp ? 'Submit Total' : 'LOG IN'}</h2>
+      <h2>{'Search User By Email'}</h2>
 
       <form onSubmit={handleSubmit}>
         <input
-          type='number'
-          id='total'
-          name='total'
-          placeholder='total'
-          required={true}
-          onChange={(e) => setTotal(e.target.value)}
-        />
-        <input
           type='email'
-          id='total'
-          name='total'
+          id='email'
+          name='email'
           placeholder='email'
           required={true}
           onChange={(e) => setEmail(e.target.value)}
@@ -75,4 +66,4 @@ function SubmitTotal({ setShowModal, isSignUp }) {
   );
 }
 
-export default SubmitTotal;
+export default SearchTotal;

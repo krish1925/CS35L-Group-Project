@@ -20,7 +20,10 @@ function OnBoarding() {
         gender_interest: '',
         url: '',
         about: '',
-        matches: []
+        matches: [],
+        workout_time:'',
+        workout_intensity:'',
+        favorite_exercise:''
     })
 
     let navigate = useNavigate()
