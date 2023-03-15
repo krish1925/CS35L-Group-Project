@@ -12,6 +12,8 @@ function Dashboard() {
   const[cookies, setCookie, removeCookie] = useCookies(['user'])
   const [genderedUsers, setGenderedUsers] = useState(null)
   const [showProfile, setShowProfile] = useState(false);
+  const [matchSelected, setMatchSelected] = useState(null)
+  const[clickedUser, setClickedUser] = useState(null)
   const navigate = useNavigate();
 
     const userId = cookies.UserId
@@ -96,14 +98,14 @@ function Dashboard() {
     <>
       {user && (
         <div className="dashboard">
-          <ChatContainer user={user} />
+          <ChatContainer user={user} setMatchSelected={setMatchSelected} clickedUser = {clickedUser}setClickedUser={setClickedUser} />
           
           <div className="swipe-container">
           <div className="button-container">
                 <button className="secondary-button" onClick={goLeaderboard}>Leaderboard</button>
                 <button className="secondary-button" onClick={goViewprofile}>View/Edit Profile</button>
               </div>
-            <div className="card-container">
+           {!matchSelected &&( <div className="card-container">
 
               {filteredGenderedUsers?.map((genderedUser) => (
                 <TinderCard
@@ -123,7 +125,22 @@ function Dashboard() {
               <div className="swipe-info">
                 {lastDirection ? <p>You Swiped {lastDirection}</p> : <p />}
               </div>
-            </div>
+            </div>)}
+            {matchSelected && 
+            (<div className="ViewProfile">
+
+      
+            <h2>{matchSelected.first_name}</h2>
+            <img src={matchSelected.url} alt={"photo"} style={{maxWidth: "300px", maxgitHeight: "300px"}}/>
+            <p>Gender: {matchSelected.gender_identity}</p>
+            <p>Gender Interest: {matchSelected.gender_interest}</p>
+            <p>About me: {matchSelected.about}</p>
+            <p>Goals: {matchSelected.goals}</p>
+            <p>Favorite Exercise: {matchSelected.favorite_exercise}</p>
+            <p>Preferred Workout Time: {matchSelected.workout_time}</p>
+            <p>Preferred Workout Intensity: {matchSelected.workout_intensity}</p>
+            
+          </div>)}
           </div>
         </div>
       )}
