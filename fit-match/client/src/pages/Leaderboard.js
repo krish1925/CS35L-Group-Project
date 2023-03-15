@@ -66,47 +66,47 @@ function Leaderboard() {
                             <tr>
                                 <td>1</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                    <img src={leaderboard[0]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
-                                    <div>{leaderboard[0]?.name}</div>
+                                {leaderboard[0].total ? (<img src={leaderboard[0]?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(<img src={null} alt="" width="50" height="50" style={{ marginRight: "10px" }} />)}
+                                    <div>{leaderboard[0].total ? (leaderboard[0]?.name):("")}</div>
                                 </td>
                                 <td>{leaderboard[0]?.total}</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                    <img src={leaderboard[1]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
-                                    <div>{leaderboard[1]?.name}</div>
+                                {leaderboard[1].total ? (<img src={leaderboard[1]?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(<img src={null} alt="" width="50" height="50" style={{ marginRight: "10px" }} />)}
+                                    <div>{leaderboard[1].total ? (leaderboard[1]?.name):("")}</div>
                                 </td>
                                 <td>{leaderboard[1]?.total}</td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                    <img src={leaderboard[2]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
-                                    <div>{leaderboard[2]?.name}</div>
+                                {leaderboard[2].total ? (<img src={leaderboard[2]?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(<img src={null} alt="" width="50" height="50" style={{ marginRight: "10px" }} />)}
+                                    <div>{leaderboard[2].total ? (leaderboard[2]?.name):("")}</div>
                                 </td>
-                                <td>{leaderboard[2]?.total}</td>
+                                <td>{leaderboard[2].total}</td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                    <img src={leaderboard[3]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
-                                    <div>{leaderboard[3]?.name}</div>
+                                  {leaderboard[3].total ? (<img src={leaderboard[3]?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(<img src={null} alt="" width="50" height="50" style={{ marginRight: "10px" }} />)}
+                                    <div>{leaderboard[3].total ? (leaderboard[3]?.name):("")}</div>
                                 </td>
                                 <td>{leaderboard[3]?.total}</td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                    <img src={leaderboard[4]?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />
-                                    <div>{leaderboard[4]?.name}</div>
+                                {leaderboard[4].total ? (<img src={leaderboard[4]?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(<img src={null} alt="" width="50" height="50" style={{ marginRight: "10px" }} />)}
+                                    <div>{leaderboard[4].total ? (leaderboard[4]?.name):("")}</div>
                                 </td>
                                 <td>{leaderboard[4]?.total}</td>
                             </tr>
                             {searchResult &&(<tr>
                                 <td>{searchResult ? (searchResult?.rank):("?")}</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
-                                {searchResult ? (<img src={searchResult?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />):(null)}
+                                {searchResult ? (<img src={searchResult?.url} alt="" width="50" height="50" style={{ marginRight: "10px" }} />):(null)}
                                     <div>{searchResult ? (searchResult?.name):("Search a user")}</div>
                                 </td>
                                 <td>{searchResult ? (searchResult?.total):("?")}</td>
