@@ -226,7 +226,6 @@ nav .logo-container .logo{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .swipe {
@@ -372,7 +371,7 @@ table {
 
 .leaderboard_table {
   max-width: 800px;
-  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -429,7 +428,13 @@ td:nth-child(3) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh; /* or any other value that you prefer */
+  height: 60vh; /* or any other value that you prefer */
+}
+
+.leaderboard-buttons .primary-button{
+
+  display: inline-block;
+  margin-right: 10px;
 }
 
 
@@ -461,12 +466,12 @@ td:nth-child(3) {
 
 .button-container {
   display: flex;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 .secondary-button {
   display: inline-block;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .tracking-container {

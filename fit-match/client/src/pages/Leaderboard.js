@@ -49,10 +49,10 @@ function Leaderboard() {
                 setShowModal={setShowModal}
                 showModal={showModal}
                 setIsSignUp={setIsSignUp} />
-            <div className="leaderboard_home"style={{ marginTop: '20px' }}>
+            <div className="leaderboard_home"style={{ marginTop: '10px' }}>
 
             <div className="leaderboard_home">
-            <h1 className="primary-title" style={{fontSize: '60px', marginBottom: '20px'}}>Leaderboard</h1>
+            <h1 className="primary-title" style={{fontSize: '60px', marginBottom: '15px'}}>Leaderboard</h1>
                 <div className="leaderboard_table">
                     <table>
                         <thead>
@@ -116,16 +116,19 @@ function Leaderboard() {
 
                     </table>
                 </div>
-
-                <button className="primary-button" onClick={handleClick} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px' }}>
-                    {'Submit Total'}
-                </button>
-                <button className="primary-button" onClick={searchClick} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px' }}>
-                    {'Search User'}
-                </button>
-                <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px'}}>
-                    {'Return to Dashboard'}
-                </button>
+                
+                <div className="leaderboard-buttons" >
+                    <button className="primary-button" onClick={handleClick} style={{ marginTop: '10px', fontSize:'16px', padding: '12px 16px' }}>
+                        {'Submit Total'}
+                    </button>
+                    <button className="primary-button" onClick={searchClick} style={{ marginTop: '10px', fontSize:'16px', padding: '12px 16px' }}>
+                        {'Search User'}
+                    </button>
+                    <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px', fontSize:'16px', padding: '12px 16px'}}>
+                        {'Return to Dashboard'}
+                    </button>
+                </div>
+                
                 
 
                 {showModal && (
