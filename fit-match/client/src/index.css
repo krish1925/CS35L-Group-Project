@@ -7,7 +7,7 @@ html, body {
 }
 
 *{
-  font-family: 'Readex Pro', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .primary-title {
@@ -113,7 +113,7 @@ nav .logo-container .logo{
 }
 
 .auth-modal h2 {
-  color: #36444d;
+  color: black;
 }
 
 .auth-modal input[type=password],
