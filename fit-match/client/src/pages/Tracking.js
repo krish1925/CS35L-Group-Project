@@ -1,10 +1,6 @@
-import TinderCard from 'react-tinder-card'
 import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
-import ChatContainer from '../components/ChatContainer'
 import axios from 'axios'
-import ViewProfile from './Viewprofile'
-import Leaderboard from './Leaderboard'
 import { useNavigate } from 'react-router-dom';
 import Nav from '../components/Nav'
 
@@ -79,6 +75,7 @@ function Tracking() {
                 setShowModal={() => {}}
                 showModal={false}
             />
+            <div className='tracking-container'>
             <div className="onboarding">
                 <h2>TRACK YOUR PROGRESS</h2>
 
@@ -86,7 +83,7 @@ function Tracking() {
                  
                    
 
-                   <section>
+                
                         <label>Lift</label>
                         <div className="multiple-input-container">
                             <input 
@@ -117,13 +114,13 @@ function Tracking() {
                             />
                             <label htmlFor="deadlift">Deadlift</label>
                         </div>   
-                        </section>
+                        
 
                     
 
                 </form>
 
-            </div>
+            </div></div>
         </>
     );
 }
