@@ -25,7 +25,11 @@ function Home(){
                 setIsSignUp={setIsSignUp}/>
             <div className="home">
                 <h1 className="primary-title">FitMatch</h1>
-                <h2 className="tagline" style={{ color: '#ff4057', paddingTop: '0px', alignItems: 'top', fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}> Match, Meet, Motivate </h2>
+                <h2 className="tagline" style={{paddingTop: '0px', alignItems: 'top', fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
+                    <span style={{color:'#007788'}}>Match. </span> 
+                    <span style={{color:'#159897'}}>Meet. </span> 
+                    <span style={{color:'#21ADA8'}}>Motivate. </span>
+                </h2>
                 <button className="primary-button" onClick={handleClick}>
                     {authToken ? 'Signout' : 'Create Account'}
                 </button>

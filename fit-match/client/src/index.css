@@ -18,19 +18,19 @@ html, body {
 .primary-button {
   color: #fff;
   font-size: 20px;
-  background: #FF4057;
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   padding: 12px 30px;
   border-radius: 30px;
   border: none;
 }
 
 .primary-button:hover {
-  background: #36444d;
+  background: black;
 }
 
 .secondary-button {
   color: #FFFF;
-  background-color: #FF4057;
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   font-weight: 500;
   font-size: 20px;
   padding: 12px 30px;
@@ -40,7 +40,7 @@ html, body {
 }
 
 .secondary-button:hover{
-  background: #36444d;
+  background: black;
 }
 
 /*------- Navigation Bar -------*/
@@ -52,7 +52,7 @@ nav{
 }
 
 nav .nav-button {
-  color: #FF4057;
+  color: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   background-color: #fff;
   font-size: 20px;
   padding: 10px 20px;
@@ -63,8 +63,8 @@ nav .nav-button {
 }
 
 nav .nav-button:disabled {
-  background-color: #880f1d;
-  color:rgb(162, 156, 156);
+  background: linear-gradient(to right, #00333b, #0b4f4f, #15706d, #6dac86);
+  color:rgb(157, 152, 152);
 }
 
 nav .logo-container {

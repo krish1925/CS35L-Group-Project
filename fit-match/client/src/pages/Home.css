@@ -26,7 +26,7 @@
   }
 
 .overlay h1{
-    color: #36444d;
+    color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-bottom: 0px;
     align-content: center;
@@ -37,7 +37,7 @@
 
 
 .overlay button{
-    background-color: #ff4057;
+    background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -45,7 +45,7 @@
 }
 
 .overlay button:hover{
-    background: #36444d;
+    background: rgb(26, 25, 25);
   }
   
   
