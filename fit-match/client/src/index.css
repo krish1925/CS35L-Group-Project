@@ -10,11 +10,6 @@ html, body {
   font-family: 'Readex Pro', sans-serif;
 }
 
-.overlay h1 {
-  font-family: 'Readex Pro', sans-serif;
-  font-size: 60px;
-}
-
 .primary-title {
   font-size: 90px;
   color: #fff;
@@ -244,7 +239,7 @@ nav .logo-container .logo{
 
 .card {
   width: 400px;
-  height: 550px;
+  height: 515px;
   border-radius: 30px;
   background-size: cover;
   background-position: center;
@@ -335,7 +330,7 @@ nav .logo-container .logo{
 
 
 
-
+/*------------ leaderboard ---------- */
 
 .leaderboard {
   display: flex;
