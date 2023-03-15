@@ -103,14 +103,14 @@ function Leaderboard() {
                                 </td>
                                 <td>{leaderboard[4]?.total}</td>
                             </tr>
-                            <tr>
+                            {searchResult &&(<tr>
                                 <td>{searchResult ? (searchResult?.rank):("?")}</td>
                                 <td style={{ display: "flex", alignItems: "center" }}>
                                 {searchResult ? (<img src={searchResult?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />):(null)}
                                     <div>{searchResult ? (searchResult?.name):("Search a user")}</div>
                                 </td>
                                 <td>{searchResult ? (searchResult?.total):("?")}</td>
-                            </tr>
+                            </tr>)}
                         </tbody>
                         
 
