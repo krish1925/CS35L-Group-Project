@@ -81,7 +81,11 @@ function AuthModal({ setShowModal, isSignUp }) {
       </form>
 
       <hr />
-      <h2>Match, Meet, Motivate</h2>
+      <h2 className="tagline" style={{fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
+            <span style={{color:'#007788'}}>Match. </span> 
+            <span style={{color:'#159897'}}>Meet. </span> 
+            <span style={{color:'#21ADA8'}}>Motivate. </span>
+      </h2>
     </div>
   );
 }

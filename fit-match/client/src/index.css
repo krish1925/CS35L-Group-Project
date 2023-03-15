@@ -122,7 +122,7 @@ nav .logo-container .logo{
 {
   padding: 8px;
   margin: 8px;
-  font-size: 17px;
+  font-size: 20px;
   color: #36444d;
 }
 
@@ -216,10 +216,6 @@ nav .logo-container .logo{
 .onboarding form .photo-container img{
   width: 100%;
 }
-
-
-
-
 
 /*-------- Dashboard  --------*/
 .dashboard {
