@@ -50,15 +50,16 @@ function Leaderboard() {
                 showModal={showModal}
                 setIsSignUp={setIsSignUp} />
             <div className="leaderboard_home"style={{ marginTop: '40px' }}>
-                <h1 className="primary-title">Leaderboard</h1>
 
+            <div className="leaderboard_home">
+            <h1 className="primary-title" style={{fontSize: '60px', marginBottom: '20px'}}>Leaderboard</h1>
                 <div className="leaderboard_table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Rank</th>
-                                <th>Name</th>
-                                <th>Powerlifting Total</th>
+                                <th style={{background: "#007788"}}>Rank</th>
+                                <th style={{background: "#159897"}}>Name</th>
+                                <th style={{background: "#21ADA8"}}>Powerlifting Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -136,6 +137,7 @@ function Leaderboard() {
                 )}
 
             </div>
+        </div>
         </div>
 
     );
