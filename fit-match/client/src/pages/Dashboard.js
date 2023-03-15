@@ -111,11 +111,11 @@ function Dashboard() {
                     className="card"
                   >
                     <h3>{genderedUser.first_name}</h3>
-                  </div>
+                  </div> 
                 </TinderCard>
               ))}
               <div className="swipe-info">
-                {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
+                {lastDirection ? <p>You Swiped {lastDirection}</p> : <p />}
               </div>
             </div>
           </div>

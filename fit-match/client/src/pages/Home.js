@@ -23,6 +23,7 @@ function Home(){
                 setShowModal={setShowModal} 
                 showModal={showModal}
                 setIsSignUp={setIsSignUp}/>
+                <h1>Krish</h1>
             <div className="home">
                 <h1 className="primary-title">FitMatch</h1>
                 <h2 className="tagline" style={{paddingTop: '0px', alignItems: 'top', fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>

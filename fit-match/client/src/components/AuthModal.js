@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function AuthModal({ setShowModal, isSignUp }) {
   const [email, setEmail] = useState(null);
@@ -9,8 +9,8 @@ function AuthModal({ setShowModal, isSignUp }) {
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [error, setError] = useState(null);
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
-  const navigate = useNavigate(); // define navigate using useNavigate hook
-  console.log(email, password, confirmPassword);
+  const navigate = useNavigate();
+  const location = useLocation(); // get current page using useLocation hook
 
   function handleClick() {
     setShowModal(false);
@@ -22,7 +22,7 @@ function AuthModal({ setShowModal, isSignUp }) {
       if (isSignUp && password !== confirmPassword) {
         setError('Passwords need to match!');
       }
-      console.log('make a post request to our database');
+
       const response = await axios.post(
         `http://localhost:8000/${isSignUp ? 'signup' : 'login'}`,
         { email, password }
@@ -33,7 +33,7 @@ function AuthModal({ setShowModal, isSignUp }) {
 
       const success = response.status === 201;
 
-      if (success && isSignUp) navigate('/onboarding'); // use navigate here
+      if (success && isSignUp) navigate('/onboarding');
       if (success && !isSignUp) navigate('/dashboard');
 
       window.location.reload();
@@ -42,10 +42,15 @@ function AuthModal({ setShowModal, isSignUp }) {
     }
   };
 
+  // Conditionally render AuthModal based on the current page
+  if (location.pathname === '/leaderboard') {
+    return null; // Return null to hide the login option on the leaderboard page
+  }
+
   return (
     <div className='auth-modal'>
       <div className='close-icon' onClick={handleClick}>
-      ✖
+        ✖
       </div>
       <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
 
@@ -81,10 +86,10 @@ function AuthModal({ setShowModal, isSignUp }) {
       </form>
 
       <hr />
-      <h2 className="tagline" style={{fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
-            <span style={{color:'#007788'}}>Match. </span> 
-            <span style={{color:'#159897'}}>Meet. </span> 
-            <span style={{color:'#21ADA8'}}>Motivate. </span>
+      <h2 className='tagline' style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
+        <span style={{ color: '#007788' }}>Match. </span>
+        <span style={{ color: '#159897' }}>Meet. </span>
+        <span style={{ color: '#21ADA8' }}>Motivate. </span>
       </h2>
     </div>
   );
