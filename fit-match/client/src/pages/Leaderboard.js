@@ -43,15 +43,14 @@ function Leaderboard() {
                 showModal={showModal}
                 setIsSignUp={setIsSignUp} />
             <div className="leaderboard_home">
-                <h1 className="primary-title">Leaderboard</h1>
-
+            <h1 className="primary-title" style={{fontSize: '60px', marginBottom: '20px'}}>Leaderboard</h1>
                 <div className="leaderboard_table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Rank</th>
-                                <th>Name</th>
-                                <th>Powerlifting Total</th>
+                                <th style={{background: "#007788"}}>Rank</th>
+                                <th style={{background: "#159897"}}>Name</th>
+                                <th style={{background: "#21ADA8"}}>Powerlifting Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,13 +100,14 @@ function Leaderboard() {
                     </table>
                 </div>
 
-                <button className="primary-button" onClick={handleClick} style={{ marginTop: '30px' }}>
-                    {'Submit Total'}
-                </button>
-                <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px' }}>
-                    {'Return to Dashboard'}
-                </button>
-                
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                    <button className="primary-button" onClick={handleClick} style={{ marginRight: '20px', fontSize: '20px' }}>
+                        {'Submit Total'}
+                        </button>
+                    <button className="primary-button" onClick={goDashboard} style={{ marginLeft: '20px', fontSize: '20px' }}>
+                        {'Return to Dashboard'}
+                    </button>
+                </div>
 
                 {showModal && (
                     <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp} />

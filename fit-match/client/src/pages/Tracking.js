@@ -80,10 +80,7 @@ function Tracking() {
                 <h2>TRACK YOUR PROGRESS</h2>
 
                 <form onSubmit={handleSubmit}>
-                 
-                   
-
-                
+ 
                         <label>Lift</label>
                         <div className="multiple-input-container">
                             <input 

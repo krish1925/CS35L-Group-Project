@@ -52,10 +52,6 @@ const ViewProfile= ()=> {
 export default ViewProfile;
 
 
-
-
-
-
 // import { useState } from 'react';
 // import axios from 'axios';
 
