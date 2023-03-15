@@ -52,7 +52,20 @@ function AuthModal({ setShowModal, isSignUp }) {
       <div className='close-icon' onClick={handleClick}>
         ✖
       </div>
-      <h2>{isSignUp ? 'CREATE ACCOUNT' : 'LOG IN'}</h2>
+      <h2 style={{ display: "inline-block" }}>
+        {isSignUp ? (
+          <div>
+          <span style={{ color: "#007788" }}>CREATE </span>
+          <span style={{ color: "#159897" }}>ACCOUNT</span>
+          </div>
+        ) : (
+          <div>
+          <span style={{ color: "#007788" }}>LOG </span>
+          <span style={{ color: "#159897" }}>IN </span>
+        </div>
+        )}
+      </h2>
+
 
       <form onSubmit={handleSubmit}>
         <input
