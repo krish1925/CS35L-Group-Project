@@ -56,7 +56,6 @@ app.post('/submitTotal', async (req, res) => {
     try {
         await client.connect()
         const database = client.db('app-data')
-        const leaderboard = database.collection('leaderboard')
         const users = database.collection('users')
         
         const {email, total} = req.body
@@ -396,6 +395,61 @@ app.post('/message', async(req, res) => {
         await client.close()
     }
 })
+
+app.post('/mile-log', async (req, res) => {
+    const client = new MongoClient(uri);
+    try {
+      await client.connect();
+      const database = client.db('app-data');
+      const users = database.collection('users');
+  
+      const { user_id, date, mile_time } = req.body;
+      const user = await users.findOne({ _id: ObjectId(user_id) });
+      if (user) {
+        const result = await users.updateOne(
+          { _id: ObjectId(user_id) },
+          { $push: { mile_times: { date, mile_time } } }
+        );
+        res.send(result);
+      } else {
+        res.status(404).send('User not found');
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      await client.close();
+    }
+  });
+  
+
+
+  app.get('/searchTotal', async(req, res) => {
+    const client = new MongoClient(uri)
+    const email = req.query.email;
+    try {
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.collection('users')
+
+        const user = await users.findOne({ email });
+        const total = user.total
+        const rank = await users.countDocuments({ total: { $gt: total } }) + 1
+        const response = {
+            total: user.total,
+            name: user.first_name,
+            url: user.url,
+            rank: rank 
+        };
+        console.log(response)
+        res.json(response);
+     
+    } finally {
+        await client.close()
+    }
+})
+
+
+
 
 app.listen(PORT, () => console.log('Server running on PORT ' + PORT)) 
 

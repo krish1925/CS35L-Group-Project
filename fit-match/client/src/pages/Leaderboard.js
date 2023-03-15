@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import SubmitTotal from '../components/SubmitTotal'
+import SearchTotal from '../components/SearchTotal'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
@@ -10,18 +11,23 @@ function Leaderboard() {
     const [showModal, setShowModal] = useState(false);
     const [isSignUp, setIsSignUp] = useState(true);
     const navigate = useNavigate();
+    const[searchResult, setSearchResult] = useState(false)
+    const[showSearch, setShowSearch] = useState(false)
 
     const authToken = false;
 
     function handleClick() {
         console.log('clicked');
         setShowModal(true);
-        setIsSignUp(true);
+    }
+
+    function searchClick() {
+        setShowSearch(true);
     }
 
     useEffect(() => {
         axios.get('http://localhost:8000/leaderboard')
-            .then(response => {
+            .then(response => { 
                 setLeaderboard((response.data));
             })
             .catch(error => {
@@ -34,6 +40,7 @@ function Leaderboard() {
       };
 
 
+
     return (
 
         <div className="overlay">
@@ -42,7 +49,7 @@ function Leaderboard() {
                 setShowModal={setShowModal}
                 showModal={showModal}
                 setIsSignUp={setIsSignUp} />
-            <div className="leaderboard_home">
+            <div className="leaderboard_home"style={{ marginTop: '40px' }}>
                 <h1 className="primary-title">Leaderboard</h1>
 
                 <div className="leaderboard_table">
@@ -95,22 +102,37 @@ function Leaderboard() {
                                 </td>
                                 <td>{leaderboard[4]?.total}</td>
                             </tr>
+                            <tr>
+                                <td>{searchResult ? (searchResult?.rank):("?")}</td>
+                                <td style={{ display: "flex", alignItems: "center" }}>
+                                {searchResult ? (<img src={searchResult?.url} alt="User Avatar" width="50" height="50" style={{ marginRight: "10px" }} />):(null)}
+                                    <div>{searchResult ? (searchResult?.name):("Search a user")}</div>
+                                </td>
+                                <td>{searchResult ? (searchResult?.total):("?")}</td>
+                            </tr>
                         </tbody>
-
+                        
 
                     </table>
                 </div>
 
-                <button className="primary-button" onClick={handleClick} style={{ marginTop: '30px' }}>
+                <button className="primary-button" onClick={handleClick} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px' }}>
                     {'Submit Total'}
                 </button>
-                <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px' }}>
+                <button className="primary-button" onClick={searchClick} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px' }}>
+                    {'Search User'}
+                </button>
+                <button className="primary-button" onClick={goDashboard} style={{ marginTop: '10px', fontSize:'14px', padding: '8px 12px'}}>
                     {'Return to Dashboard'}
                 </button>
                 
 
                 {showModal && (
                     <SubmitTotal setShowModal={setShowModal} isSignUp={isSignUp} />
+                )}
+
+                {showSearch && (
+                    <SearchTotal setShowSearch={setShowSearch} searchResult={searchResult} setSearchResult={setSearchResult}/>
                 )}
 
             </div>
