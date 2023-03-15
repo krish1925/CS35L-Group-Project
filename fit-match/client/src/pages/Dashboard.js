@@ -78,52 +78,52 @@ function Dashboard() {
     const goLeaderboard = () => {
       navigate('/leaderboard');
     };
+    const goViewprofile = () => {
+      navigate('/viewprofile', { state: { user } });
+    }
 
   const toggleProfile = () => {
     setShowProfile(!showProfile);
   };
 
-    return (
-      <>
-        {user && (
-          <div className="dashboard">
-            <ChatContainer user={user} />
-            <div className="swipe-container">
-              <div className="card-container">
-              <div className="button-container">
-  <button className="secondary-button" onClick={goLeaderboard}>Leaderboard</button>
-  <button className="secondary-button" onClick={toggleProfile}>{showProfile ? 'View Matches' : 'View/Edit Profile'}</button>
-</div>
-                {showProfile ? (
-                  <ViewProfile user= {user} toggleProfile={toggleProfile} />
-                ) : (
-                  <>
-                    {filteredGenderedUsers?.map((genderedUser) => (
-                      <TinderCard
-                        className="swipe"
-                        key={genderedUser.first_name}
-                        onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
-                        onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
-                      >
-                        <div
-                          style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
-                          className="card"
-                        >
-                          <h3>{genderedUser.first_name}</h3>
-                        </div>
-                      </TinderCard>
-                    ))}
-                    <div className="swipe-info">
-                      {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
-                    </div>
-                  </>
-                )}
+  return (
+    <>
+      {user && (
+        <div className="dashboard">
+          <ChatContainer user={user} />
+          
+          <div className="swipe-container">
+          <div className="button-container">
+                <button className="secondary-button" onClick={goLeaderboard}>Leaderboard</button>
+                <button className="secondary-button" onClick={goViewprofile}>View/Edit Profile</button>
+              </div>
+            <div className="card-container">
+
+              {filteredGenderedUsers?.map((genderedUser) => (
+                <TinderCard
+                  className="swipe"
+                  key={genderedUser.first_name}
+                  onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
+                  onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
+                >
+                  <div
+                    style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
+                    className="card"
+                  >
+                    <h3>{genderedUser.first_name}</h3>
+                  </div>
+                </TinderCard>
+              ))}
+              <div className="swipe-info">
+                {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
               </div>
             </div>
           </div>
-        )}
-      </>
-    );
+        </div>
+      )}
+    </>
+  )
 }
+  
 
 export default Dashboard;

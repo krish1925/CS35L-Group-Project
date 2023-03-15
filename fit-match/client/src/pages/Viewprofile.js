@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 
-const ViewProfile= ({user})=> {
+const ViewProfile= ()=> {
+  const location = useLocation();
+    const user = location.state.user;
     const [isEditing, setIsEditing] = useState(false);
     const handleEditClick = () => {
         setIsEditing(true);
@@ -14,7 +17,7 @@ const ViewProfile= ({user})=> {
       };
 
       function handleClick() {
-        navigate('/editProfile')
+        navigate('/editProfile', { state: { user } });
     }
     const navigate = useNavigate();
 
@@ -24,9 +27,11 @@ const ViewProfile= ({user})=> {
 
   return (
     <div className="ViewProfile">
+      <button className="secondary-button" onClick={() => navigate('/dashboard')}>Go to Dashboard</button>
       <h2>{user.first_name}</h2>
-      <img src={user.url} alt={"photo"} style={{maxWidth: "300px", maxHeight: "300px"}}/>
+      <img src={user.url} alt={"photo"} style={{maxWidth: "300px", maxgitHeight: "300px"}}/>
       <p>Gender: {user.gender_identity}</p>
+      <p>Gender Interest: {user.gender_interest}</p>
       <p>About me: {user.about}</p>
       <p>Goals: {user.goals}</p>
       <p>Favorite Exercise: {user.favorite_exercise}</p>
