@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;700&display=swap');
+
 .overlay {
     background: white; /* centers the child vertically */
     height: 100vh; 
@@ -23,7 +25,8 @@
 
 .overlay h1{
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 60px;
+    font-family: 'Readex Pro', sans-serif;
     padding-bottom: 0px;
     align-content: center;
     margin-bottom: 0;
