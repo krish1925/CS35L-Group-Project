@@ -55,7 +55,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="morning-workout-time"
                 type="radio"
                 name="workout_time"
-                value="morning"
+                value="Morning"
                 onChange={handleChange}
                 checked={formData.workout_time === 'Morning'}
               />
@@ -64,7 +64,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="midday-workout-time"
                 type="radio"
                 name="workout_time"
-                value="midday"
+                value="Midday"
                 onChange={handleChange}
                 checked={formData.workout_time === 'Midday'}
               />
@@ -73,7 +73,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="night-workout-time"
                 type="radio"
                 name="workout_time"
-                value="night"
+                value="Night"
                 onChange={handleChange}
                 checked={formData.workout_time === 'Night'}
               />
@@ -87,7 +87,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="light-workout-intensity"
                 type="radio"
                 name="workout_intensity"
-                value="light"
+                value="Light"
                 onChange={handleChange}
                 checked={formData.workout_intensity === 'Light'}
               />
@@ -96,7 +96,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="medium-workout-intensity"
                 type="radio"
                 name="workout_intensity"
-                value="medium"
+                value="Medium"
                 onChange={handleChange}
                 checked={formData.workout_intensity === 'Medium'}
               />
@@ -105,7 +105,7 @@ const [cookies, setCookie, removeCookie] = useCookies(['user'])
                 id="intense-workout-intensity"
                 type="radio"
                 name="workout_intensity"
-                value="intense"
+                value="Intense"
                 onChange={handleChange}
                 checked={formData.workout_intensity === 'Intense'}
               />
