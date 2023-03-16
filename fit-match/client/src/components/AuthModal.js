@@ -22,11 +22,13 @@ function AuthModal({ setShowModal, isSignUp }) {
       if (isSignUp && password !== confirmPassword) {
         setError('Passwords need to match!');
       }
-
+      
       const response = await axios.post(
         `http://localhost:8000/${isSignUp ? 'signup' : 'login'}`,
         { email, password }
       );
+      
+      
 
       setCookie('AuthToken', response.data.token, { path: '/' });
       setCookie('UserId', response.data.userId, { path: '/' })
@@ -35,6 +37,9 @@ function AuthModal({ setShowModal, isSignUp }) {
 
       if (success && isSignUp) navigate('/onboarding');
       if (success && !isSignUp) navigate('/dashboard');
+      if(!success) {
+        setError("Account creation failed. Email may be taken.")
+      }
 
       window.location.reload();
     } catch (error) {

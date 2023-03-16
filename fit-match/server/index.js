@@ -32,7 +32,6 @@ app.post('/signup', async (req, res) => {
         if (existingUser) {
             return res.status(409).send('User already exists. Please login')
         }
-
         const sanitizedEmail = email.toLowerCase()
 
         const data = {
@@ -192,15 +191,10 @@ app.get('/gendered-users', async (req, res) => {
         await client.connect()
         const database = client.db('app-data')
         const users = database.collection('users')
-        const query = {gender_identity: {$eq:gender}}  
+        const query = {gender_identity: {$eq:gender}}
         const foundUsers = await users.find(query).toArray()
         const allUsers = await users.find().toArray()
-        if (gender != 'male' && gender != 'female') {
-            res.send(allUsers)
-        } else {
-            res.send(foundUsers)
-        }
-        
+        res.json(allUsers)
     } finally {
         await client.close()
     }
@@ -267,7 +261,6 @@ app.put('/user', async (req, res) => {
     }
 })
 
-//I think we can delete this now, added it onto updating a user
 //putting workout preferences in database
 app.put('/workout', async (req, res) => {
     const client = new MongoClient(uri)

@@ -130,7 +130,7 @@ function Dashboard() {
           <div className="swipe-container">
           <div className="button-container">
                 <button className="secondary-button" onClick={goLeaderboard}>Leaderboard</button>
-                <button className="secondary-button" onClick={goViewprofile}>View/Edit Profile</button>
+                <button className="secondary-button" onClick={goViewprofile}>View/Edit My Profile</button>
               </div>
            {!matchSelected &&( <div className="card-container">
 
