@@ -1,6 +1,6 @@
 import TinderCard from 'react-tinder-card'
 import React from 'react'
-import {useEffect, useState, useRef} from 'react'
+import {useEffect, useState} from 'react'
 import {useCookies} from 'react-cookie'
 import ChatContainer from '../components/ChatContainer'
 import axios from 'axios'
@@ -54,18 +54,6 @@ function Dashboard() {
 
 
     const [lastDirection, setLastDirection] = useState();
-    const tinderCardRef = useRef(null);
-
-    const tinderCardLeftRef = useRef(null);
-    const tinderCardRightRef = useRef(null);
-    
-    const swipeLeft = () => {
-      tinderCardLeftRef.current?.swipe("left");
-    };
-    
-    const swipeRight = () => {
-      tinderCardRightRef.current?.swipe("right");
-    };
 
     const updatedMatches = async (matchedUserId) => {
       try {
@@ -104,8 +92,7 @@ function Dashboard() {
         // Check user's preferred gender
         if (user.gender_interest === 'Everyone') {
           console.log("a")
-          return true;
-          
+          return true; 
         }
         if (user.gender_interest === 'Male' && genderedUser.gender_identity !== 'Male') {
           return false;
@@ -114,7 +101,6 @@ function Dashboard() {
           return false;
         }
         return true;
-      
       }
     );
     
@@ -149,7 +135,6 @@ function Dashboard() {
                   preventSwipe={["up", "down"]}
                   onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                   onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
-                  ref={index % 2 === 0 ? tinderCardLeftRef : tinderCardRightRef}
                 >
                   <div
                     style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
@@ -161,10 +146,6 @@ function Dashboard() {
               ))}
               <div className="swipe-info">
                 {lastDirection ? <p>you swiped {lastDirection}</p> : <p />}
-
-                <button className="swipe-button" onClick={swipeLeft}>Left</button>
-                <button className="swipe-button" onClick={swipeRight}>Right</button>
-
               </div>
               
             </div>)}
@@ -181,7 +162,6 @@ function Dashboard() {
             <p>Favorite Exercise: {matchSelected.favorite_exercise}</p>
             <p>Preferred Workout Time: {matchSelected.workout_time}</p>
             <p>Preferred Workout Intensity: {matchSelected.workout_intensity}</p>
-            
           </div>)}
           </div>
         </div>
