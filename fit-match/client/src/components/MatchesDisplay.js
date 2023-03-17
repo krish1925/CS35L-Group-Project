@@ -21,6 +21,12 @@ function MatchesDisplay({matches, setClickedUser, setMatchSelected}) {
         }
     }
 
+
+    const filteredMatchedProfiles = matchedProfiles?.filter(
+        matchedProfile => matchedProfile.matches.filter((profile) => profile.user_id == userId).length > 0)
+
+
+
     useEffect(() => {
         getMatches()
     }, [matches])
@@ -33,7 +39,7 @@ function MatchesDisplay({matches, setClickedUser, setMatchSelected}) {
 
     return (
         <div className="matches-display">   
-            {matchedProfiles?.map((match, _index) => (
+            {filteredMatchedProfiles?.map((match, _index) => (
                 <div key = {{_index}} className = "match-card" onClick ={() => {
                     setClickedUser(match)
                     setMatchSelected(match)
