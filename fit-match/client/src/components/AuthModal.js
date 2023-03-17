@@ -21,6 +21,7 @@ function AuthModal({ setShowModal, isSignUp }) {
     try {
       if (isSignUp && password !== confirmPassword) {
         setError('Passwords need to match!');
+        return
       }
       
       const response = await axios.post(
