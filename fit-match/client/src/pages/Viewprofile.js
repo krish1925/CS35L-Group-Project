@@ -42,7 +42,7 @@ const ViewProfile= ()=> {
       <p>Preferred Workout Time: {user.workout_time}</p>
       <p>Preferred Workout Intensity: {user.workout_intensity}</p>
       
-      <button className="secondary-button" onClick={handleClick}>Edit</button> 
+      <button className="edit-button" onClick={handleClick}>Edit</button> 
     </div>
     </div>
   );

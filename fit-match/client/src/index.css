@@ -287,21 +287,23 @@ nav .logo-container .logo{
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
   rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   width: 30%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: left;
   z-index: 1;
 }
 
 .chat-container .chat-container-header {
-  background: linear-gradient(45deg,#21ADA8, #007788);
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+
 .chat-container .chat-container-header .logout-button {
-  color: #007788;
-  font-size: 15px;
+  color: #21ADA8;
+  font-size: 17px;
   font-weight: bold;
   background: #fff;
   padding: 8px 20px;
@@ -311,7 +313,7 @@ nav .logo-container .logo{
 }
 
 .chat-container .chat-container-header .logout-button:hover{
-  color: #007788;
+  color: #21ADA8;
   background: black;
 }
 
@@ -320,6 +322,7 @@ nav .logo-container .logo{
   background-color: #fff;
   border-bottom: solid 4px #21ADA8;
   font-size: 20px;
+  font-weight: bold;
   margin: 2px;
   padding: 10px;
 }
@@ -354,6 +357,7 @@ nav .logo-container .logo{
     padding: 20px;
     height: 50vh;
     overflow-y: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*-------- Chat Input --------*/
@@ -361,6 +365,7 @@ nav .logo-container .logo{
     padding: 20px;
     display: flex;
     flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*------------ leaderboard ---------- */
@@ -373,7 +378,7 @@ nav .logo-container .logo{
   margin: 0 auto;
   padding: 20px;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #ffff;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   width: 80%; /* Set to a fixed value */
@@ -467,10 +472,11 @@ td:nth-child(3) {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  background-color: #35bab5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 15px auto 20px auto;
 }
 
 .ViewProfile h2 {
@@ -478,17 +484,35 @@ td:nth-child(3) {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  color: white;
 }
 
 .ViewProfile p {
   margin: 10px 0;
   font-size: 18px;
   text-align: center;
+  color: white;
 }
 
 .button-container {
   display: flex;
   margin: 10px;
+}
+
+.ViewProfile .edit-button{
+  color: #21ADA8;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+.ViewProfile .edit-button:hover{
+  color: #21ADA8;
+  background: black;
 }
 
 .secondary-button {
