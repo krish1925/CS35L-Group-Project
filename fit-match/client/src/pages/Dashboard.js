@@ -56,12 +56,15 @@ function Dashboard() {
     const [lastDirection, setLastDirection] = useState();
     const tinderCardRef = useRef(null);
 
+    const tinderCardLeftRef = useRef(null);
+    const tinderCardRightRef = useRef(null);
+    
     const swipeLeft = () => {
-      tinderCardRef.current.swipe("left");
+      tinderCardLeftRef.current?.swipe("left");
     };
-
+    
     const swipeRight = () => {
-      tinderCardRef.current.swipe("right");
+      tinderCardRightRef.current?.swipe("right");
     };
 
     const updatedMatches = async (matchedUserId) => {
@@ -141,15 +144,14 @@ function Dashboard() {
               </div>
            {!matchSelected &&( <div className="card-container">
 
-              {filteredGenderedUsers?.map((genderedUser) => (
+              {filteredGenderedUsers?.map((genderedUser, index) => (
                 <TinderCard
                   className="swipe"
                   key={genderedUser.first_name}
                   preventSwipe={["up", "down"]}
                   onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                   onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
-                  //adding here
-                  ref={tinderCardRef}
+                  ref={index % 2 === 0 ? tinderCardLeftRef : tinderCardRightRef}
                 >
                   <div
                     style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
