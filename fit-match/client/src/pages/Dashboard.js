@@ -113,8 +113,6 @@ function Dashboard() {
         if (user.gender_interest === 'Female' && genderedUser.gender_identity !== 'Female') {
           return false;
         }
-
-        // Include users that passed all the conditions
         return true;
       
       }

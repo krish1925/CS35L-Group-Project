@@ -31,7 +31,7 @@ html, body {
 .secondary-button {
   color: #FFFF;
   background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
-  font-weight: 500;
+  font-weight: bold;
   font-size: 20px;
   padding: 12px 30px;
   border-radius: 30px;
@@ -256,10 +256,27 @@ nav .logo-container .logo{
   position: absolute;
   color: white;
   bottom: 0;
-  -webkit-text-stroke: 1px black;
   font-size: 20px;
   padding: 10px;
+  margin-left: 50px;
 }
+
+.dashboard .swipe-info .swipe-button{
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+}
+
+.dashboard .swipe-info .swipe-button:hover{
+  background: black;
+}
+
 
 /*-------- ChatContainer  --------*/
 
@@ -289,6 +306,11 @@ nav .logo-container .logo{
   border-radius: 30px;
   border: none;
   margin-right: 10px;
+}
+
+.chat-container .chat-container-header .logout-button:hover{
+  color: #007788;
+  background: black;
 }
 
 .chat-container .option {
@@ -338,8 +360,6 @@ nav .logo-container .logo{
     display: flex;
     flex-direction: column;
 }
-
-
 
 /*------------ leaderboard ---------- */
 
@@ -446,7 +466,7 @@ td:nth-child(3) {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -481,12 +501,3 @@ td:nth-child(3) {
   height: 100vh;
 }
 
-.swipe-button{
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 20px;
-  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
-  padding: 12px 30px;
-  border-radius: 30px;
-  border: none;
-}
