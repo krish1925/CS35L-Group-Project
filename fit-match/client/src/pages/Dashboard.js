@@ -1,5 +1,6 @@
 import TinderCard from 'react-tinder-card'
-import {useEffect, useState} from 'react'
+import React from 'react'
+import {useEffect, useState, useRef} from 'react'
 import {useCookies} from 'react-cookie'
 import ChatContainer from '../components/ChatContainer'
 import axios from 'axios'
@@ -53,6 +54,15 @@ function Dashboard() {
 
 
     const [lastDirection, setLastDirection] = useState();
+    const tinderCardRef = useRef(null);
+
+    const swipeLeft = () => {
+      tinderCardRef.current.swipe("left");
+    };
+
+    const swipeRight = () => {
+      tinderCardRef.current.swipe("right");
+    };
 
     const updatedMatches = async (matchedUserId) => {
       try {
@@ -71,7 +81,7 @@ function Dashboard() {
       if (direction === 'right') {
         console.log(swipedUserId)
         updatedMatches(swipedUserId)
-      }
+      } 
       setLastDirection(direction);
     }
   
@@ -101,15 +111,12 @@ function Dashboard() {
           return false;
         }
 
-        
-    
         // Include users that passed all the conditions
         return true;
       
       }
     );
     
-  
     const goLeaderboard = () => {
       navigate('/leaderboard');
     };
@@ -141,6 +148,8 @@ function Dashboard() {
                   preventSwipe={["up", "down"]}
                   onSwipe={(dir) => swiped(dir, genderedUser.user_id)}
                   onCardLeftScreen={() => outOfFrame(genderedUser.first_name)}
+                  //adding here
+                  ref={tinderCardRef}
                 >
                   <div
                     style={{ backgroundImage: 'url(' + genderedUser.url + ')' }}
@@ -152,7 +161,12 @@ function Dashboard() {
               ))}
               <div className="swipe-info">
                 {lastDirection ? <p>You Swiped {lastDirection}</p> : <p />}
+
+                <button className="swipe-button" onClick={swipeLeft}>Left</button>
+                <button className="swipe-button" onClick={swipeRight}>Right</button>
+
               </div>
+              
             </div>)}
             {matchSelected && 
             (<div className="ViewProfile">

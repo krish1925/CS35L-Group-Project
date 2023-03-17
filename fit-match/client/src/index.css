@@ -480,3 +480,13 @@ td:nth-child(3) {
   align-items: center;
   height: 100vh;
 }
+
+.swipe-button{
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 20px;
+  background: linear-gradient(to right, #007788, #159897, #21ADA8, #99eebb);
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+}
