@@ -41,9 +41,14 @@ function SearchTotal({ setShowSearch, searchResult, setSearchResult}) {
   return (
     <div className='auth-modal'>
       <div className='close-icon' onClick={handleClick}>
-        Ⓧ
+      ✖
       </div>
-      <h2>{'Search User By Email'}</h2>
+      <h2 style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif', fontWeight: "bold", fontSize: "20px" }}>
+        <span style={{ color: '#007788' }}>SEARCH </span>
+        <span style={{ color: '#159897' }}>USER </span>
+        <span style={{ color: '#21ADA8' }}>BY </span>
+        <span style={{ color: '#5FD1C7' }}>EMAIL </span>
+      </h2>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -61,7 +66,11 @@ function SearchTotal({ setShowSearch, searchResult, setSearchResult}) {
       </form>
 
       <hr />
-      <h2>Match, Meet, Motivate</h2>
+      <h2 className='tagline' style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
+        <span style={{ color: '#007788' }}>Match. </span>
+        <span style={{ color: '#159897' }}>Meet. </span>
+        <span style={{ color: '#21ADA8' }}>Motivate. </span>
+      </h2>
     </div>
   );
 }

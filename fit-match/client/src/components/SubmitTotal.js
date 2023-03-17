@@ -42,9 +42,19 @@ function SubmitTotal({ setShowModal, isSignUp }) {
   return (
     <div className='auth-modal'>
       <div className='close-icon' onClick={handleClick}>
-        Ⓧ
+      ✖
       </div>
-      <h2>{isSignUp ? 'Submit Total' : 'LOG IN'}</h2>
+      {isSignUp ? (
+          <div>
+          <span style={{ color: "#007788", fontWeight: "bold", fontSize: "20px" }}>SUBMIT </span>
+          <span style={{ color: "#159897", fontWeight: "bold", fontSize: "20px" }}>TOTAL</span>
+          </div>
+        ) : (
+          <div>
+          <span style={{ color: "#007788" }}>LOG </span>
+          <span style={{ color: "#159897" }}>IN </span>
+        </div>
+        )}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -70,7 +80,11 @@ function SubmitTotal({ setShowModal, isSignUp }) {
       </form>
 
       <hr />
-      <h2>Match, Meet, Motivate</h2>
+      <h2 className='tagline' style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}>
+        <span style={{ color: '#007788' }}>Match. </span>
+        <span style={{ color: '#159897' }}>Meet. </span>
+        <span style={{ color: '#21ADA8' }}>Motivate. </span>
+      </h2>
     </div>
   );
 }
