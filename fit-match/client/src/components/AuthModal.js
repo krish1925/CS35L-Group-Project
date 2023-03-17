@@ -29,14 +29,17 @@ function AuthModal({ setShowModal, isSignUp }) {
       );
       
       
-
+      setTimeout(function() {
+      }, 1000);
       setCookie('AuthToken', response.data.token, { path: '/' });
       setCookie('UserId', response.data.userId, { path: '/' })
 
       const success = response.status === 201;
 
-      if (success && isSignUp) navigate('/onboarding');
-      if (success && !isSignUp) navigate('/dashboard');
+      if (success && isSignUp)    {  setTimeout(function() {
+      }, 2000); navigate('/onboarding');}
+      if (success && !isSignUp)  {    setTimeout(function() {
+      }, 2000); navigate('/dashboard');}
       if(!success) {
         setError("Account creation failed. Email may be taken.")
       }
