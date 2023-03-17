@@ -254,7 +254,9 @@ nav .logo-container .logo{
 
 .dashboard .swipe-info {
   position: absolute;
-  color: white;
+  color: #007788;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   bottom: 0;
   font-size: 20px;
   padding: 10px;

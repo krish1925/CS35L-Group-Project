@@ -160,7 +160,7 @@ function Dashboard() {
                 </TinderCard>
               ))}
               <div className="swipe-info">
-                {lastDirection ? <p>You Swiped {lastDirection}</p> : <p />}
+                {lastDirection ? <p>you swiped {lastDirection}</p> : <p />}
 
                 <button className="swipe-button" onClick={swipeLeft}>Left</button>
                 <button className="swipe-button" onClick={swipeRight}>Right</button>
