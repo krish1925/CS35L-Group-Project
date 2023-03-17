@@ -1,4 +1,3 @@
-import { match } from "@reach/router/lib/utils";
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {useCookies} from 'react-cookie'
@@ -21,21 +20,12 @@ function MatchesDisplay({matches, setClickedUser, setMatchSelected}) {
         }
     }
 
-
     const filteredMatchedProfiles = matchedProfiles?.filter(
         matchedProfile => matchedProfile.matches?.filter((profile) => profile.user_id == userId).length > 0)
-
-
 
     useEffect(() => {
         getMatches()
     }, [matches])
-
-    
-
-    console.log("matchedprofs " + matchedProfiles)
-
-
 
     return (
         <div className="matches-display">   
@@ -52,7 +42,7 @@ function MatchesDisplay({matches, setClickedUser, setMatchSelected}) {
             ))}
             
         </div>
-
-)}
+    )
+}
 
 export default MatchesDisplay;
